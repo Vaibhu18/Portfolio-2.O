@@ -22,7 +22,12 @@ const Header = () => {
                 </div>
             </div>
             <div className='mt-3 flex gap-2 md:gap-5 mb-5'>
-                <button className='flex gap-1 justify-center items-center bg-[red] px-4 py-1 rounded-md font-medium text-[14px] text-white'><IoMdDownload />Download Resume </button>
+                <a href="/vaibhav.pdf" download="vaibhav.pdf">
+                    <button className="flex gap-1 justify-center items-center bg-[red] px-4 py-1 rounded-md font-medium text-[14px] text-white">
+                        <IoMdDownload />
+                        Download Resume
+                    </button>
+                </a>
                 <button
                     onClick={() => navigator?.clipboard?.writeText("vcode.dev18@gmail.com")}
                     className='flex gap-2 justify-center items-center border bg-slate-200 hover:bg-slate-300 px-4 py-1 rounded-md font-medium text-[14px] dark:bg-[black] dark:hover:bg-[#363636]'> <IoCopyOutline />Copy Email </button>

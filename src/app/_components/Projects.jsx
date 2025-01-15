@@ -25,6 +25,7 @@ const Projects = () => {
                             src={project.link}
                             title={project.title}
                             className="w-full h-[250px]"
+                            scrolling="no"
                         ></iframe>
                         <div className="px-3 py-2">
                             <h2 className="text-lg font-semibold mb-2">{project.title}</h2>

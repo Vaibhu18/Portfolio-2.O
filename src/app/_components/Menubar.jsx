@@ -14,7 +14,7 @@ const Menubar = () => {
     useEffect(() => setMounted(true), [])
     return (
         <div className="w-[300px] mx-auto fixed justify-between bottom-5 left-0 right-0 flex p-3 px-5 shadow-[0px_0px_5px_0.01px_black] dark:shadow-[0px_0px_5px_0.01px_white] rounded-xl bg-white dark:text-white dark:bg-black">
-            <AiOutlineHome size={28} />
+            <Link href="/"><AiOutlineHome size={28} /></Link>
             <AiFillGithub size={28} />
             <AiFillLinkedin size={28} />
             <TbBrandLeetcode size={28} />
