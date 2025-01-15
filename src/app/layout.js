@@ -2,10 +2,10 @@ import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./_components/Providers";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
+// const poppins = Poppins({
+//   subsets: ["latin"],
+//   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+// });
 
 const montserrat = Montserrat({
   subsets: ["latin"],
