@@ -16,8 +16,10 @@ const Header = () => {
                     <p className=' font-medium text-[#464545] dark:text-[#9a9999] text-[15px] md:text-[17px] md:w-[500px]'>Full-Stack Developer with a love for building things that make a difference. Always exploring new ideas and solving problems.</p>
                 </div>
                 <div className='min-w-[100px]'>
-                    <img src='https://avatars.githubusercontent.com/u/103619246?v=4' alt='Profile'
-                        className='w-[100px] rounded-full p-0.5 border border-[#969494] dark:border-[#817f7f]'
+                    <img
+                        src='/profile.jpeg'
+                        alt='Profile'
+                        className='w-[100px] h-[100px] rounded-full object-cover p-0.5 border border-[#969494] dark:border-[#817f7f]'
                     />
                 </div>
             </div>
