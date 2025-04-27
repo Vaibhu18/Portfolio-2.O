@@ -1,63 +1,105 @@
 import { GoDotFill } from "react-icons/go";
-import { FaGithub } from "react-icons/fa";
-import { FaGlobe } from "react-icons/fa";
+import { FaGithub, FaGlobe } from "react-icons/fa";
 import Link from "next/link";
 
 const projects = [
     {
-        title: "Flowbite Components",
-        link: "https://vcode-dev-vaibhav.vercel.app/",
-        techs: ["html", "css", "js", "react", "mongodb"],
+        title: "Personal Portfolio",
+        link: "https://newportfolio-swart.vercel.app/",
+        github: "https://github.com/Vaibhu18/Portfolio-2.O",
+        techs: ["HTML", "CSS", "JavaScript", "React.js"],
     },
+    {
+        title: "Top Coders Academy",
+        link: "https://tca-vcode.vercel.app/",
+        github: "https://github.com/Vaibhu18/TCA-Cirtificates",
+        techs: [
+            "Next.js 15 (Frontend & Backend)",
+            "Tailwind CSS",
+            "MongoDB (Mongoose)",
+            "NextAuth.js (Authentication)",
+            "Razorpay SDK (Payments)",
+            "Zod (Validation)"
+        ]
+
+    },
+
 ];
 
 const Projects = () => {
     return (
-        <div className="w-full sm:w-[85%] md:w-[60%] mx-auto px-4 mt-8">
-            <h1 className="text-2xl font-semibold mb-6 text-center">My Projects</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section className="w-full sm:w-[85%] md:w-[70%] mx-auto px-4 mt-12">
+            <h1 className="text-2xl font-bold mb-8 text-center">Projects</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="border rounded-lg overflow-hidden pb-4 bg-[#dddddd] dark:bg-[#1d1d1d] shadow-md"
+                        className="border border-gray-200 dark:border-gray-700 
+                        rounded-2xl overflow-hidden shadow-lg 
+                        bg-[#e5f0ff] dark:bg-[#151c27]
+                        transition-all hover:scale-[1.01] 
+                        hover:shadow-xl hover:shadow-gray-200/50 
+                        dark:hover:shadow-black/30"
                     >
-                        <iframe
-                            src={project.link}
-                            title={project.title}
-                            className="w-full h-[250px]"
-                            scrolling="no"
-                        ></iframe>
-                        <div className="px-3 py-2">
-                            <h2 className="text-lg font-semibold mb-2">{project.title}</h2>
-                            <ul className="flex gap-2 flex-wrap mb-3 text-sm">
+                        <div className="w-full h-[200px] overflow-hidden relative">
+                            <iframe
+                                src={project.link}
+                                title={project.title}
+                                className="w-[1440px] md:w-[1600px] h-[900px] border-none"
+                                style={{
+                                    transform: 'scale(0.25)',
+                                    transformOrigin: '0 0',
+                                }}
+                                loading="lazy"
+                            ></iframe>
+                        </div>
+                        <div className="p-4">
+                            <h2 className="text-sm font-semibold mb-4">{project.title}</h2>
+                            <ul className="flex flex-wrap gap-2 mb-4">
                                 {project.techs.map((tech, techIndex) => (
                                     <li
                                         key={techIndex}
-                                        className="border-2 border-yellow-600 rounded-md px-2 flex items-center gap-1"
+                                        className="text-[11px] border border-blue-500 dark:border-blue-400 
+                                        bg-blue-50 dark:bg-blue-900/30
+                                        text-blue-700 dark:text-blue-300 
+                                        rounded-full px-3 py-1 flex items-center gap-1.5
+                                        hover:bg-blue-500 dark:hover:bg-blue-400 
+                                        hover:text-white dark:hover:text-gray-900 
+                                        transition-all duration-200"
                                     >
-                                        <GoDotFill className="text-yellow-600" /> {tech}
+                                        <GoDotFill className="text-[8px]" /> {tech}
                                     </li>
                                 ))}
                             </ul>
                             <div className="flex gap-3">
-                                <Link href="https://vcode-dev-vaibhav.vercel.app/"
-                                    className="flex items-center gap-1 bg-black text-white dark:bg-white dark:text-black px-3 py-1 rounded-md text-sm font-medium"
-                                    target="block"
+                                <Link
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 px-4 py-2 text-sm font-medium
+                                    bg-blue-600 hover:bg-blue-700
+                                     text-white rounded-lg transition-all duration-200"
                                 >
-                                    <FaGlobe /> Website
+                                    <FaGlobe className="text-[14px]" /> Live Demo
                                 </Link>
-                                <Link href="https://vcode-dev-vaibhav.vercel.app/"
-                                    className="flex items-center gap-1 bg-black text-white dark:bg-white dark:text-black px-3 py-1 rounded-md text-sm font-medium"
-                                    target="block"
+                                <Link
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 px-4 py-2 text-sm font-medium
+                                    dark:bg-gray-200 dark:hover:bg-gray-300
+                                    bg-gray-800 hover:bg-gray-900
+                                    text-white dark:text-gray-800
+                                    rounded-lg shadow-md transition-all duration-200"
                                 >
-                                    <FaGithub /> Source Code
+                                    <FaGithub className="text-[14px]" /> Source Code
                                 </Link>
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 
