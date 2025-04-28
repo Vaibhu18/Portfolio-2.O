@@ -5,7 +5,7 @@ import Link from "next/link";
 const projects = [
     {
         title: "Personal Portfolio",
-        link: "https://newportfolio-swart.vercel.app/",
+        link: "https://vcode-portfolio.vercel.app",
         github: "https://github.com/Vaibhu18/Portfolio-2.O",
         techs: ["HTML", "CSS", "JavaScript", "React.js"],
         date: "Jan 13, 2025"
@@ -39,12 +39,14 @@ const Projects = () => {
                             <iframe
                                 src={project.link}
                                 title={project.title}
-                                className="w-[1440px] md:w-[1600px] h-[900px] border-none"
+                                className="absolute top-0 left-0 w-full h-full border-b-4 border-blue-500"
                                 style={{
-                                    transform: 'scale(0.25)',
-                                    transformOrigin: '0 0',
+                                    transform: `scale(0.25)`,
+                                    transformOrigin: 'top left',
+                                    width: '400%',
+                                    height: '400%',
                                 }}
-                                loading="lazy"
+
                             ></iframe>
                         </div>
                         <div className="p-4">
@@ -97,6 +99,7 @@ const Projects = () => {
                 ))}
             </div>
         </section>
+
     );
 };
 

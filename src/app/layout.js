@@ -15,6 +15,9 @@ const montserrat = Montserrat({
 export const metadata = {
   title: "Portfolio ( Vaibhav Shinde )",
   description: "Vaibhav Shinde Portfolio",
+  icons: {
+    icon: "apple-icon.png",
+  },
 };
 
 export default function RootLayout({ children }) {

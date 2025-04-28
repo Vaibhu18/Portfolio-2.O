@@ -37,9 +37,9 @@ const Menubar = () => {
 
             <button
                 onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-                className={`${resolvedTheme === "dark" ? "border-white" : "border-orange-500"} flex flex-col justify-between items-center hover:border-b-2 `}
+                className={`${resolvedTheme === "dark" ? "border-orange-500 hover:text-orange-500" : "border-black"} flex flex-col justify-between items-center hover:border-b-2 `}
             >
-                {resolvedTheme === "dark" ? <IoMdMoon size={20} color='white' /> : <FiSun size={20} color='orange' />}
+                {resolvedTheme === "dark" ? <FiSun size={20} color='orange' /> : <IoMdMoon size={20} color='black' />}
                 <span className="text-[10px] font-semibold">
                     {resolvedTheme === "dark" ? "Light" : "Dark"}
                 </span>
