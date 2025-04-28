@@ -11,8 +11,8 @@ const Skills = () => {
                 {skills.map((skill, index) => {
                     return (
                         <span key={index} className='flex justify-center items-center gap-1 py-1 px-2 border rounded-md bg-slate-200 dark:bg-[#c9bfbf39]'>
-                            <Image src={skill.image} width={40} height={40} alt={skill.name} />
-                            <h1 className='font-semibold'>{skill.name}</h1>
+                            <Image src={skill.image} width={30} height={30} alt={skill.name} />
+                            <h1 className=' text-[11px] font-semibold'>{skill.name}</h1>
                         </span>
                     )
                 })}
@@ -72,10 +72,4 @@ const skills = [{
 }, {
     name: 'GitHub',
     image: '/images/github.png',
-}, {
-    name: 'Windows',
-    image: '/images/windows.png',
-}, {
-    name: 'Ubuntu',
-    image: '/images/ubuntu.png',
 }]

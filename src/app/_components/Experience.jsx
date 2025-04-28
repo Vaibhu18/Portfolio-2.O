@@ -4,7 +4,7 @@ import { GoDotFill } from "react-icons/go";
 const Experience = () => {
     return (
         <div className="w-[100vw] sm:w-[85vw] md:w-[60vw] mx-auto px-2 mt-8">
-            <h1 className="text-xl font-semibold mb-2">Education</h1>
+            <h1 className="text-xl font-semibold mb-2">Experience</h1>
             <div>
                 <div className="flex gap-1 justify-between items-start mb-2">
                     <div className="flex gap-2">

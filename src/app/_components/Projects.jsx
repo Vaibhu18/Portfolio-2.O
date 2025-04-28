@@ -8,20 +8,14 @@ const projects = [
         link: "https://newportfolio-swart.vercel.app/",
         github: "https://github.com/Vaibhu18/Portfolio-2.O",
         techs: ["HTML", "CSS", "JavaScript", "React.js"],
+        date: "Jan 13, 2025"
     },
     {
         title: "Top Coders Academy",
         link: "https://tca-vcode.vercel.app/",
         github: "https://github.com/Vaibhu18/TCA-Cirtificates",
-        techs: [
-            "Next.js 15 (Frontend & Backend)",
-            "Tailwind CSS",
-            "MongoDB (Mongoose)",
-            "NextAuth.js (Authentication)",
-            "Razorpay SDK (Payments)",
-            "Zod (Validation)"
-        ]
-
+        techs: ["Next.js 15 (Frontend & Backend)", "Tailwind CSS", "MongoDB (Mongoose)", "NextAuth.js (Authentication)", "Razorpay SDK (Payments)", "Zod (Validation)"],
+        date: "Jan 13, 2025"
     },
 
 ];
@@ -54,7 +48,10 @@ const Projects = () => {
                             ></iframe>
                         </div>
                         <div className="p-4">
-                            <h2 className="text-sm font-semibold mb-4">{project.title}</h2>
+                            <div className="flex justify-between items-center">
+                                <h2 className="text-sm font-semibold mb-4">{project.title}</h2>
+                                <h2 className="text-[11px] font-medium text-[#a19f9f] mb-4">{project.date}</h2>
+                            </div>
                             <ul className="flex flex-wrap gap-2 mb-4">
                                 {project.techs.map((tech, techIndex) => (
                                     <li
