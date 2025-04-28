@@ -15,7 +15,7 @@ const projects = [
         link: "https://tca-vcode.vercel.app/",
         github: "https://github.com/Vaibhu18/TCA-Cirtificates",
         techs: ["Next.js 15 (Frontend & Backend)", "Tailwind CSS", "MongoDB (Mongoose)", "NextAuth.js (Authentication)", "Razorpay SDK (Payments)", "Zod (Validation)"],
-        date: "Jan 13, 2025"
+        date: "Jan 14, 2025"
     },
 
 ];
