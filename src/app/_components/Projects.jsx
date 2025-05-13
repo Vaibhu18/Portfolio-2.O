@@ -5,21 +5,21 @@ import Link from "next/link";
 const projects = [
     {
         title: "ThinkAI (DeepSeek Clone)",
-        link: "https://thinkai-rho.vercel.app/",
-        github: "https://github.com/Vaibhu18/Portfolio-2.O",
+        link: ["/images/thinkai.png", "https://vcode-thinkai.vercel.app/"],
+        github: "https://github.com/Vaibhu18/ThinkAI",
         techs: ["MERN with NextJS 15 ", "Tailwind CSS", "Clerk (Authentication)", "Gemini API"],
         date: "May 11, 2025"
     },
     {
         title: "Top Coders Academy",
-        link: "https://tca-vcode.vercel.app/",
+        link: ["https://tca-vcode.vercel.app/", "https://tca-vcode.vercel.app/"],
         github: "https://github.com/Vaibhu18/TCA-Cirtificates",
         techs: ["Next.js 15 (Frontend & Backend)", "Tailwind CSS", "MongoDB (Mongoose)", "NextAuth.js (Authentication)", "Razorpay SDK (Payments)", "Zod (Validation)"],
         date: "Jan 14, 2025"
     },
     {
         title: "Personal Portfolio",
-        link: "https://vcode-portfolio.vercel.app",
+        link: ["https://vcode-portfolio.vercel.app", "https://vcode-portfolio.vercel.app"],
         github: "https://github.com/Vaibhu18/Portfolio-2.O",
         techs: ["HTML", "CSS", "JavaScript", "React.js"],
         date: "Jan 13, 2025"
@@ -44,7 +44,7 @@ const Projects = () => {
                     >
                         <div className="w-full h-[200px] overflow-hidden relative">
                             <iframe
-                                src={project.link}
+                                src={project.link[0]}
                                 title={project.title}
                                 className="absolute top-0 left-0 w-full h-full border-b-4 border-blue-500"
                                 style={{
@@ -79,7 +79,7 @@ const Projects = () => {
                             </ul>
                             <div className="flex gap-3">
                                 <Link
-                                    href={project.link}
+                                    href={project.link[1]}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center gap-2 px-4 py-2 text-sm font-medium
