@@ -4,11 +4,11 @@ import Link from "next/link";
 
 const projects = [
     {
-        title: "Personal Portfolio",
-        link: "https://vcode-portfolio.vercel.app",
+        title: "ThinkAI (DeepSeek Clone)",
+        link: "https://thinkai-rho.vercel.app/",
         github: "https://github.com/Vaibhu18/Portfolio-2.O",
-        techs: ["HTML", "CSS", "JavaScript", "React.js"],
-        date: "Jan 13, 2025"
+        techs: ["MERN with NextJS 15 ", "Tailwind CSS", "Clerk (Authentication)", "Gemini API"],
+        date: "May 11, 2025"
     },
     {
         title: "Top Coders Academy",
@@ -16,6 +16,13 @@ const projects = [
         github: "https://github.com/Vaibhu18/TCA-Cirtificates",
         techs: ["Next.js 15 (Frontend & Backend)", "Tailwind CSS", "MongoDB (Mongoose)", "NextAuth.js (Authentication)", "Razorpay SDK (Payments)", "Zod (Validation)"],
         date: "Jan 14, 2025"
+    },
+    {
+        title: "Personal Portfolio",
+        link: "https://vcode-portfolio.vercel.app",
+        github: "https://github.com/Vaibhu18/Portfolio-2.O",
+        techs: ["HTML", "CSS", "JavaScript", "React.js"],
+        date: "Jan 13, 2025"
     },
 
 ];
