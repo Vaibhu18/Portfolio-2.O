@@ -4,6 +4,14 @@ import Link from "next/link";
 
 const projects = [
     {
+        title: "🧠 Mindful - AI Health Coach",
+        desc: `Mindful is an AI-powered journaling and wellness companion that helps users reflect, track moods, and receive personalized coaching using the Gemini API 🤖. It leverages mood-based journaling and conversational AI to guide users toward better mental clarity and wellness 🧘. Built with Next.js and MongoDB, it features secure and seamless authentication with NextAuth.js 🔐.`,
+        link: ["https://vcode-mindful.vercel.app/", "https://vcode-mindful.vercel.app/"],
+        github: "https://github.com/Vaibhu18/Mindful",
+        techs: ["⚛️ Next.js", "🛡️ NextAuth.js", "🟢 MongoDB", "🤖 Gemini API"],
+        date: "📅 May 28, 2025",
+    },
+    {
         title: "🚀 GenPro - AI Productivity Assistant",
         desc: `GenPro is an AI-powered tool that generates complete React applications based on user prompts using the Gemini API 🤖.It intelligently interprets user intent and builds production-ready code in real time 🚀.The generated app is rendered directly within the browser using Sandpack, providing an interactive coding experience 💻.Built with MERN and Next.js 15, it features seamless authentication through Auth.js 🔐.`,
         link: ["https://vcode-genpro.vercel.app/", "https://vcode-genpro.vercel.app/"],
