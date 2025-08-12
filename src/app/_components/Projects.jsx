@@ -56,18 +56,21 @@ const projects = [
 const Projects = () => {
     return (
         <section className="w-full max-w-[1200px] mx-auto px-4 mt-16">
-            <h1 className="text-3xl font-bold mb-10 text-center text-gray-800 dark:text-white">
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-12 text-center bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent">
                 🚀 My Projects
             </h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="border rounded-bl-lg rounded-br-lg border-gray-200 dark:border-gray-700 shadow-md dark:shadow-lg bg-[#f4f8ff] dark:bg-[#151c27] hover:shadow-xl transition-all duration-300"
+                        className="group relative rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700
+                bg-white/80 dark:bg-gray-900/70 backdrop-blur-lg
+                shadow-lg hover:shadow-2xl hover:border-blue-400
+                transition-all duration-300 transform hover:-translate-y-2"
                     >
                         {/* Project Preview */}
-                        <div className="w-full h-[200px] overflow-hidden relative bg-black">
+                        <div className="relative w-full h-[200px] md:h-[220px] overflow-hidden">
                             <iframe
                                 src={project.link[0]}
                                 title={project.title}
@@ -80,31 +83,35 @@ const Projects = () => {
                                     height: "400%",
                                 }}
                             ></iframe>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
                         </div>
 
+
                         {/* Project Content */}
-                        <div className="min-h-[150px] p-5 flex flex-col justify-between">
+                        <div className="p-5 sm:p-6 flex flex-col justify-between">
                             <div>
-                                <div className='flex justify-between mb-4'>
-                                    <h1 className='text-base font-semibold text-gray-900 dark:text-white'>{project.title}</h1>
-                                    <h1 className="text-sm text-gray-500 dark:text-gray-400">{project.date}</h1>
+                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-1">
+                                    <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                        {project.title}
+                                    </h2>
+                                    <span className="text-xs text-gray-500 dark:text-gray-400">{project.date}</span>
                                 </div>
 
-                                <div className='flex justify-between mb-4'>
-                                    <p className="text-[13.5px]">{project.desc}</p>
-                                </div>
+                                <p className="text-sm sm:text-[15px] text-gray-700 dark:text-gray-300 leading-relaxed mb-5">
+                                    {project.desc}
+                                </p>
 
                                 {/* Tech Tags */}
-                                <ul className="flex flex-wrap gap-2 mb-5">
+                                <ul className="flex flex-wrap gap-2">
                                     {project.techs.map((tech, i) => (
                                         <li
                                             key={i}
-                                            className="text-xs border border-blue-500 dark:border-blue-400 
-                                                    bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 
-                                                    rounded-full px-3 py-1 flex items-center gap-1.5
-                                                    hover:bg-blue-500 dark:hover:bg-blue-400 
-                                                    hover:text-white dark:hover:text-gray-900 
-                                                            transition-all"
+                                            className="text-xs sm:text-sm border border-blue-500 dark:border-blue-400
+                                    bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300
+                                    rounded-full px-3 py-1 flex items-center gap-1.5
+                                    hover:bg-blue-500 dark:hover:bg-blue-400
+                                    hover:text-white dark:hover:text-gray-900
+                                    transition-all duration-300"
                                         >
                                             <GoDotFill className="text-[8px]" /> {tech}
                                         </li>
@@ -113,21 +120,21 @@ const Projects = () => {
                             </div>
 
                             {/* Action Buttons */}
-                            <div className="flex gap-3">
+                            <div className="flex flex-wrap gap-3 mt-6">
                                 <Link
                                     href={project.link[1]}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition"
+                                    className="flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-medium bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white rounded-lg shadow-md hover:shadow-lg transition-all"
                                 >
-                                    <FaGlobe className="text-[14px]" /> Live Demo
+                                    <FaGlobe className="text-[14px]" /> Live
                                 </Link>
 
                                 <Link
                                     href={project.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-gray-800 hover:bg-gray-900 text-white dark:bg-gray-200 dark:hover:bg-gray-300 dark:text-gray-900 rounded-lg transition"
+                                    className="flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-medium bg-gray-800 hover:bg-gray-900 text-white dark:bg-gray-200 dark:hover:bg-gray-300 dark:text-gray-900 rounded-lg shadow-md hover:shadow-lg transition-all"
                                 >
                                     <FaGithub className="text-[14px]" /> Source Code
                                 </Link>
@@ -137,6 +144,7 @@ const Projects = () => {
                 ))}
             </div>
         </section>
+
     );
 };
 

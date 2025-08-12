@@ -55,14 +55,17 @@ const skills = [{
     name: 'MongoDB',
     image: '/images/mongo-db.png',
 }, {
-    name: 'Socket.io',
-    image: '/images/socket.png',
+    name: 'AI',
+    image: '/images/ai.png',
 }, {
     name: 'C',
     image: '/images/C.png',
 }, {
     name: 'C++',
     image: '/images/C++.png',
+}, {
+    name: 'Java',
+    image: '/images/java.png',
 }, {
     name: 'DSA',
     image: '/images/DSA.png',
