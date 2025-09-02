@@ -1,21 +1,47 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 const Skills = () => {
     return (
         <div className="w-[100vw] sm:w-[85vw] md:w-[65vw] mx-auto px-2 mt-12">
-            <h1 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
+            <motion.h1
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-xl font-bold mb-2 text-gray-900 dark:text-white"
+            >
                 Skills
-            </h1>
+            </motion.h1>
 
-            <div className="flex flex-wrap gap-3">
+            <motion.div
+                className="flex flex-wrap gap-3"
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                variants={{
+                    hidden: {},
+                    show: {
+                        transition: {
+                            staggerChildren: 0.08, // delay for each child
+                        },
+                    },
+                }}
+            >
                 {skills.map((skill, index) => (
-                    <span
+                    <motion.span
                         key={index}
+                        variants={{
+                            hidden: { opacity: 0, scale: 0.8, y: 20 },
+                            show: { opacity: 1, scale: 1, y: 0 },
+                        }}
+                        transition={{ duration: 0.4, ease: "easeOut" }}
                         className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-700
-                       bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 text-sm font-medium
-                       hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/40
-                       transition-colors duration-200"
+                        bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 text-sm font-medium
+                        hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/40
+                        transition-colors duration-200"
                     >
                         <Image
                             src={skill.image}
@@ -25,9 +51,9 @@ const Skills = () => {
                             className="object-contain"
                         />
                         {skill.name}
-                    </span>
+                    </motion.span>
                 ))}
-            </div>
+            </motion.div>
         </div>
     );
 };

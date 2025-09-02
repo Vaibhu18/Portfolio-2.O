@@ -32,7 +32,7 @@ const Header = () => {
                 <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.7, delay: 0.3 }}
+                    transition={{ duration: 0.7, delay: 0.1 }}
                     className="min-w-[150px] flex justify-center"
                 >
                     <img
