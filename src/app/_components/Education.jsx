@@ -2,7 +2,7 @@ import React from 'react'
 
 const Education = () => {
     return (
-        <div className="w-[100vw] sm:w-[85vw] md:w-[60vw] mx-auto px-2 mt-8">
+        <div className="w-[100vw] sm:w-[85vw] md:w-[65vw] mx-auto px-2 mt-8">
             <h1 className="text-xl font-semibold mb-2">Education</h1>
             <div>
                 <div className="flex gap-1 justify-between items-start mb-4">
@@ -10,7 +10,7 @@ const Education = () => {
                         <img
                             src="https://almashines.s3.dualstack.ap-southeast-1.amazonaws.com/assets/images/gallary_photos/t1709278369_llqmhZo9oz.jpg"
                             alt="Vidya Pratishthan's College Logo"
-                            className="h-[45px] rounded-md"
+                            className="w-[40px] h-[40px] rounded-md object-fill"
                         />
                         <div>
                             <h2 className="text-[14px] font-medium">
@@ -24,13 +24,13 @@ const Education = () => {
                     <p className="text-[13px] font-semibold text-gray-700 dark:text-gray-500">2023 - 2026</p>
                 </div>
             </div>
-            <div>
+            <div className=''>
                 <div className="flex gap-1 justify-between items-start mb-4">
                     <div className="flex gap-2">
                         <img
                             src="https://media.licdn.com/dms/image/v2/C4D0BAQHn-mst7Jf8Pw/company-logo_200_200/company-logo_200_200/0/1638195127956/functionup_logo?e=2147483647&v=beta&t=0nmjGtV6aj8aI4ltop8_q2aF7-zMaoeb0gU63pDE3as"
                             alt="Vidya Pratishthan's College Logo"
-                            className="h-[40px] rounded-md"
+                            className="w-[40px] h-[40px] rounded-md object-fill"
                         />
                         <div>
                             <h2 className="text-[14px] font-medium">

@@ -3,9 +3,9 @@ import Header from './_components/Header';
 import AboutMe from './_components/AboutMe';
 import Education from './_components/Education';
 import Skills from './_components/Skills';
-import Experience from './_components/Experience';
 import Projects from './_components/Projects';
 import Footer from './_components/Footer';
+import OpenSource from './_components/OpenSource';
 
 const Home = () => {
     return (
@@ -14,7 +14,7 @@ const Home = () => {
             <AboutMe />
             <Education />
             <Skills />
-            <Experience />
+            <OpenSource />
             <Projects />
             <Footer />
             <Menubar />
