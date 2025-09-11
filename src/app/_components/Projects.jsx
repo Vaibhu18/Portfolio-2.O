@@ -2,7 +2,6 @@
 import { GoDotFill } from "react-icons/go";
 import { FaGithub, FaGlobe } from "react-icons/fa";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const projects = [
     {
@@ -44,32 +43,18 @@ const projects = [
         techs: ["⚛️ MERN with Next.js 15", "🎨 Tailwind CSS", "🔐 Clerk", "🤖 Gemini API"],
         date: "📅 May 11, 2025",
     },
-    // { // title: "🏫 Top Coders Academy", // features: [ // "Mock learning platform with payments", // "Razorpay SDK for secure transactions", // "Built with Next.js Fullstack + Tailwind", // "Certificates generated instantly" // ], // link: ["https://tca-vcode.vercel.app/", "https://tca-vcode.vercel.app/"], // github: "https://github.com/Vaibhu18/TCA-Cirtificates", // techs: [ // "⚛️ Next.js 15", // "🎨 Tailwind CSS", // "🗃️ MongoDB", // "🔐 NextAuth.js", // "💳 Razorpay SDK", // "🧪 Zod" // ], // date: "📅 Jan 14, 2025", // },
-    // // { // title: "🌐 Personal Portfolio – Developer Showcase", // features: [ // "Modern and responsive developer portfolio", // "Showcases skills, projects & background", // "Built with Next.js, React & Tailwind", // "Clean design, optimized for all devices" // ], // link: ["https://vcode-portfolio.vercel.app", "https://vcode-portfolio.vercel.app"], // github: "https://github.com/Vaibhu18/Portfolio-2.O", // techs: ["🧱 HTML", "🎨 CSS", "📜 JavaScript", "⚛️ React.js"], // date: "📅 Jan 13, 2025", // },
 ];
 
 const Projects = () => {
     return (
         <section className="w-full max-w-[1000px] mx-auto px-4 mt-16">
-            <motion.h1
-                className="text-2xl font-semibold mb-5"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-            >
-                Featured Projects
-            </motion.h1>
+            <h1 className="text-2xl font-semibold mb-5">Featured Projects</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {projects.map((project, index) => (
-                    <motion.div
+                    <div
                         key={index}
                         className="group relative rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-950 backdrop-blur-lg shadow-lg hover:shadow-2xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-0.5"
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.2 }}
-                        viewport={{ once: true }}
                     >
                         {/* Project Preview */}
                         <div className="relative w-full h-[200px] md:h-[220px] overflow-hidden">
@@ -151,7 +136,7 @@ const Projects = () => {
                                 </Link>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                 ))}
             </div>
         </section>

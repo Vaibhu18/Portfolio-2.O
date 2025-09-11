@@ -1,64 +1,7 @@
-"use client"
+"use client";
 import React, { useState } from "react";
-import { IoCalendarClearOutline } from "react-icons/io5";
 import { BsBoxArrowUpRight, BsCalendar2, BsCheck2Circle } from "react-icons/bs";
-import { motion } from "framer-motion";
-
-const contributions = [
-    {
-        request: "feat: enhance team form validation and error handling",
-        skills: ["Frontend", "React"],
-        organization: "Voxora Cloud",
-        status: "Merged",
-        date: "Aug 2025",
-        action: "https://github.com/voxora-cloud/voxora/pull/20",
-    },
-    {
-        request:
-            "feat: add contrast color utility for team color display in agent details",
-        skills: ["Frontend", "React"],
-        organization: "Voxora Cloud",
-        status: "Merged",
-        date: "Aug 2025",
-        action: "https://github.com/voxora-cloud/voxora/pull/21",
-    },
-    {
-        request:
-            "feat: add contrast color utility for team color display in agent details",
-        skills: ["Frontend", "React"],
-        organization: "Voxora Cloud",
-        status: "Merged",
-        date: "Aug 2025",
-        action: "https://github.com/voxora-cloud/voxora/pull/21",
-    },
-    {
-        request:
-            "feat: add contrast color utility for team color display in agent details",
-        skills: ["Frontend", "React"],
-        organization: "Voxora Cloud",
-        status: "Merged",
-        date: "Aug 2025",
-        action: "https://github.com/voxora-cloud/voxora/pull/21",
-    },
-    {
-        request:
-            "feat: add contrast color utility for team color display in agent details",
-        skills: ["Frontend", "React"],
-        organization: "Voxora Cloud",
-        status: "Merged",
-        date: "Aug 2025",
-        action: "https://github.com/voxora-cloud/voxora/pull/21",
-    },
-    {
-        request:
-            "feat: add contrast color utility for team color display in agent details",
-        skills: ["Frontend", "React"],
-        organization: "Voxora Cloud",
-        status: "Merged",
-        date: "Aug 2025",
-        action: "https://github.com/voxora-cloud/voxora/pull/21",
-    }
-];
+import { PullRequests } from "./Data";
 
 const OpenSource = () => {
     const [visibleCount, setVisibleCount] = useState(5);
@@ -69,26 +12,12 @@ const OpenSource = () => {
 
     return (
         <div className="w-[100vw] sm:w-[85vw] md:w-[65vw] mx-auto px-2 mt-8 dark:text-white">
-            {/* Header Animation */}
-            <motion.h1
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="text-xl font-semibold"
-            >
-                Open Source Contributions
-            </motion.h1>
+            {/* Header */}
+            <h1 className="text-xl font-semibold">Open Source Contributions</h1>
 
-            <motion.p
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="text-[14px] font-medium text-gray-600 dark:text-gray-400 mb-2"
-            >
+            <p className="text-[14px] font-medium text-gray-600 dark:text-gray-400 mb-2">
                 All my pull requests and contributions to open source projects
-            </motion.p>
+            </p>
 
             {/* Table */}
             <div className="overflow-x-auto rounded-xl overflow-y-hidden">
@@ -107,13 +36,9 @@ const OpenSource = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {contributions.slice(0, visibleCount).map((contrib, index) => (
-                            <motion.tr
+                        {PullRequests.slice(0, visibleCount).map((contrib, index) => (
+                            <tr
                                 key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.4, delay: index * 0.1 }}
-                                viewport={{ once: true }}
                                 className="hover:bg-gray-100 dark:hover:bg-gray-950"
                             >
                                 {/* Pull Request */}
@@ -191,41 +116,33 @@ const OpenSource = () => {
                                         <BsBoxArrowUpRight size={13} />
                                     </div>
                                 </td>
-                            </motion.tr>
+                            </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
 
             {/* Show More / Hide */}
-            {visibleCount < contributions.length ? (
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="flex justify-center mt-6"
-                >
+            {visibleCount < PullRequests.length ? (
+                <div className="flex justify-center mt-6">
                     <button
                         onClick={handleShowMore}
                         className="px-5 py-2.5 text-sm font-medium rounded-lg bg-blue-600 text-white shadow-sm hover:bg-blue-700 hover:shadow-md transition-all"
                     >
-                        Show {contributions.length - visibleCount} more pull request
-                        {contributions.length - visibleCount > 1 ? "s" : ""}
+                        Show {PullRequests.length - visibleCount} more pull request
+                        {PullRequests.length - visibleCount > 1 ? "s" : ""}
                     </button>
-                </motion.div>
+                </div>
             ) : (
-                contributions.length > 5 && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="flex justify-center mt-6"
-                    >
+                PullRequests.length > 5 && (
+                    <div className="flex justify-center mt-6">
                         <button
                             onClick={() => setVisibleCount(5)}
                             className="px-5 py-2.5 text-sm font-medium rounded-lg bg-gray-600 text-white shadow-sm hover:bg-gray-700 hover:shadow-md transition-all"
                         >
                             Hide pull requests
                         </button>
-                    </motion.div>
+                    </div>
                 )
             )}
         </div>

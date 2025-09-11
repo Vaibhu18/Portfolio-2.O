@@ -1,28 +1,15 @@
 "use client"
 import React from "react"
-import { motion } from "framer-motion"
 
 const Education = () => {
     return (
         <div className="w-[100vw] sm:w-[85vw] md:w-[65vw] mx-auto px-2 mt-8">
-            <motion.h1
-                className="text-xl font-semibold mb-4"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                viewport={{ once: true }}
-            >
+            <h1 className="text-xl font-semibold mb-4">
                 Education
-            </motion.h1>
+            </h1>
 
             {/* First Card */}
-            <motion.div
-                className="flex gap-1 justify-between items-start mb-6"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: true }}
-            >
+            <div className="flex gap-1 justify-between items-start mb-6">
                 <div className="flex gap-2">
                     <img
                         src="https://almashines.s3.dualstack.ap-southeast-1.amazonaws.com/assets/images/gallary_photos/t1709278369_llqmhZo9oz.jpg"
@@ -41,16 +28,10 @@ const Education = () => {
                 <p className="text-[13px] font-semibold text-gray-700 dark:text-gray-500">
                     2023 - 2026
                 </p>
-            </motion.div>
+            </div>
 
             {/* Second Card */}
-            <motion.div
-                className="flex gap-1 justify-between items-start mb-6"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
-                viewport={{ once: true }}
-            >
+            <div className="flex gap-1 justify-between items-start mb-6">
                 <div className="flex gap-2">
                     <img
                         src="https://media.licdn.com/dms/image/v2/C4D0BAQHn-mst7Jf8Pw/company-logo_200_200/company-logo_200_200/0/1638195127956/functionup_logo?e=2147483647&v=beta&t=0nmjGtV6aj8aI4ltop8_q2aF7-zMaoeb0gU63pDE3as"
@@ -69,9 +50,10 @@ const Education = () => {
                 <p className="text-[13px] font-semibold text-gray-700 dark:text-gray-500">
                     2022 - 2023
                 </p>
-            </motion.div>
+            </div>
         </div>
     )
 }
 
 export default Education
+    

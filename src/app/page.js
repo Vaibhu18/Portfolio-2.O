@@ -6,6 +6,7 @@ import Skills from './_components/Skills';
 import Projects from './_components/Projects';
 import Footer from './_components/Footer';
 import OpenSource from './_components/OpenSource';
+import GetInTouch from './_components/GetInTouch';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <Skills />
             <OpenSource />
             <Projects />
+            <GetInTouch/>
             <Footer />
             <Menubar />
         </div>
