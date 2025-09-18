@@ -5,6 +5,21 @@ import Link from "next/link";
 
 const projects = [
     {
+        title: "Nexora.AI – Intelligent Search Engine",
+        features: [
+            "AI-powered conversational search with real-time answers",
+            "Context-aware query understanding and follow-up questioning",
+            "Secure authentication and user management with NextAuth.js",
+            "Data persistence and search history powered by MongoDB",
+            "Modern, accessible UI built with Next.js & shadcn components",
+            "Gemini API integration for accurate and human-like responses"
+        ],
+        link: ["https://ai-nexora.vercel.app/", "https://ai-nexora.vercel.app/"],
+        github: "https://github.com/Vaibhu18/Nexora",
+        techs: ["⚛️ Next.js", "🛡️ NextAuth.js", "🟢 MongoDB", "🎨 shadcn/ui", "🤖 Gemini API"],
+        date: "📅 September 19, 2025",
+    },
+    {
         title: "Mindful - AI Health Coach",
         features: [
             "AI-powered journaling & wellness tracking",
@@ -47,17 +62,20 @@ const projects = [
 
 const Projects = () => {
     return (
-        <section className="w-full max-w-[1000px] mx-auto px-4 mt-16">
-            <h1 className="text-2xl font-semibold mb-5">Featured Projects</h1>
+        <section className="w-full max-w-[1200px] mx-auto px-4 mt-16">
+            <h1 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white text-center">
+                Featured Projects
+            </h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {/* Masonry Layout */}
+            <div className="columns-1 lg:columns-2 gap-6 space-y-6">
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="group relative rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-950 backdrop-blur-lg shadow-lg hover:shadow-2xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-0.5"
+                        className="break-inside-avoid group relative rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 bg-white/90 dark:bg-gray-950 backdrop-blur-lg shadow-lg hover:shadow-2xl hover:border-blue-500 transition-all duration-300"
                     >
                         {/* Project Preview */}
-                        <div className="relative w-full h-[200px] md:h-[220px] overflow-hidden">
+                        <div className="relative w-full h-[200px] overflow-hidden">
                             <iframe
                                 src={project.link[0]}
                                 title={project.title}
@@ -74,46 +92,44 @@ const Projects = () => {
                         </div>
 
                         {/* Project Info */}
-                        <div className="p-5 sm:p-6 flex flex-col justify-between">
-                            <div>
-                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-1">
-                                    <h2 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                                        {project.title}
-                                    </h2>
-                                    <span className="text-xs text-gray-500 dark:text-gray-400">
-                                        {project.date}
-                                    </span>
-                                </div>
-
-                                <p className="text-sm font-medium mb-1 text-gray-700 dark:text-gray-400">
-                                    Key Features:
-                                </p>
-                                <ul className="space-y-1.5 mb-5">
-                                    {project.features.map((feature, i) => (
-                                        <li
-                                            key={i}
-                                            className="flex items-start gap-2 text-sm text-gray-800 dark:text-gray-300"
-                                        >
-                                            <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
-                                            {feature}
-                                        </li>
-                                    ))}
-                                </ul>
-
-                                <p className="text-sm font-medium mb-1 text-gray-700 dark:text-gray-400">
-                                    Technologies:
-                                </p>
-                                <ul className="flex flex-wrap gap-2">
-                                    {project.techs.map((tech, i) => (
-                                        <li
-                                            key={i}
-                                            className="text-xs font-medium border dark:border-gray-700 px-3 py-1 rounded-md"
-                                        >
-                                            {tech}
-                                        </li>
-                                    ))}
-                                </ul>
+                        <div className="p-5 sm:p-6 flex flex-col">
+                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-1">
+                                <h2 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                    {project.title}
+                                </h2>
+                                <span className="text-xs text-gray-500 dark:text-gray-400">
+                                    {project.date}
+                                </span>
                             </div>
+
+                            <p className="text-sm font-medium mb-1 text-gray-700 dark:text-gray-400">
+                                Key Features:
+                            </p>
+                            <ul className="space-y-1.5 mb-5">
+                                {project.features.map((feature, i) => (
+                                    <li
+                                        key={i}
+                                        className="flex items-start gap-2 text-sm text-gray-800 dark:text-gray-300"
+                                    >
+                                        <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                        {feature}
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <p className="text-sm font-medium mb-1 text-gray-700 dark:text-gray-400">
+                                Technologies:
+                            </p>
+                            <ul className="flex flex-wrap gap-2">
+                                {project.techs.map((tech, i) => (
+                                    <li
+                                        key={i}
+                                        className="text-xs font-medium border dark:border-gray-700 px-3 py-1 rounded-md"
+                                    >
+                                        {tech}
+                                    </li>
+                                ))}
+                            </ul>
 
                             {/* Buttons */}
                             <div className="flex flex-wrap gap-3 mt-6">
@@ -140,6 +156,8 @@ const Projects = () => {
                 ))}
             </div>
         </section>
+
+
     );
 };
 
