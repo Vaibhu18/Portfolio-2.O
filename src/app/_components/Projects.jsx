@@ -7,16 +7,17 @@ const projects = [
     {
         title: "Nexora.AI – Intelligent Search Engine",
         features: [
-            "AI-powered conversational search with real-time answers",
-            "Context-aware query understanding and follow-up questioning",
-            "Secure authentication and user management with NextAuth.js",
-            "Data persistence and search history powered by MongoDB",
-            "Modern, accessible UI built with Next.js & shadcn components",
-            "Gemini API integration for accurate and human-like responses"
+            "AI-powered conversational search delivering precise, real-time answers",
+            "Advanced context retention for multi-turn query understanding and follow-up responses",
+            "Secure authentication and user management powered by NextAuth.js with Google OAuth",
+            "Persistent user sessions and search history using MongoDB and Mongoose",
+            "Sleek, responsive, and accessible UI crafted with Next.js, Tailwind, and shadcn/ui components",
+            "Gemini API integration enabling intelligent, human-like conversational experiences",
+            "Brave Search integration for enhanced contextual data retrieval"
         ],
         link: ["https://ai-nexora.vercel.app/", "https://ai-nexora.vercel.app/"],
-        github: "https://github.com/Vaibhu18/Nexora",
-        techs: ["⚛️ Next.js", "🛡️ NextAuth.js", "🟢 MongoDB", "🎨 shadcn/ui", "🤖 Gemini API"],
+        github: "https://github.com/Vaibhu18/nexora.ai",
+        techs: ["⚛️ Next.js", "🛡️ Auth.js", "🟢 MongoDB", "🎨 shadcn/ui", "🤖 Gemini API", "🔍 Brave Search"],
         date: "📅 September 19, 2025",
     },
     {
