@@ -1,14 +1,16 @@
-"use client"
+"use client";
 import React from "react";
 
 const AboutMe = () => {
     return (
-        <div className="w-[100vw] sm:w-[85vw] md:w-[65vw] mx-auto px-2 mt-8">
-            <h1 className="text-xl font-semibold mb-2">
-                About
+        <section className="w-full sm:w-[85vw] md:w-[65vw] mx-auto px-3 pt-10">
+            {/* Heading */}
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                About Me
             </h1>
 
-            <p className="font-medium text-gray-600 dark:text-[#9a9999] text-[15px] md:text-[16px] leading-relaxed">
+            {/* Paragraph */}
+            <p className="font-medium text-gray-600 dark:text-gray-300 text-[15px] leading-relaxed">
                 Full-Stack Developer with a strong foundation in Computer Science,
                 programming, and problem-solving. Skilled in designing and developing
                 scalable applications, integrating databases, and building APIs.
@@ -17,7 +19,8 @@ const AboutMe = () => {
                 Committed to contributing to innovative projects and delivering
                 impactful solutions across both frontend and backend development.
             </p>
-        </div>
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-gray-300/50 dark:via-gray-700/40 to-transparent"></div>
+        </section>
     );
 };
 

@@ -61,8 +61,8 @@ export const Projects = [
         techs: ["⚛️ MERN with Next.js 15", "🎨 Tailwind CSS", "🔐 Clerk", "🤖 Gemini API"],
         date: "📅 May 11, 2025",
     },
-    // { // title: "🏫 Top Coders Academy", // features: [ // "Mock learning platform with payments", // "Razorpay SDK for secure transactions", // "Built with Next.js Fullstack + Tailwind", // "Certificates generated instantly" // ], // link: ["https://tca-vcode.vercel.app/", "https://tca-vcode.vercel.app/"], // github: "https://github.com/Vaibhu18/TCA-Cirtificates", // techs: [ // "⚛️ Next.js 15", // "🎨 Tailwind CSS", // "🗃️ MongoDB", // "🔐 NextAuth.js", // "💳 Razorpay SDK", // "🧪 Zod" // ], // date: "📅 Jan 14, 2025", // },
-    // // { // title: "🌐 Personal Portfolio – Developer Showcase", // features: [ // "Modern and responsive developer portfolio", // "Showcases skills, projects & background", // "Built with Next.js, React & Tailwind", // "Clean design, optimized for all devices" // ], // link: ["https://vcode-portfolio.vercel.app", "https://vcode-portfolio.vercel.app"], // github: "https://github.com/Vaibhu18/Portfolio-2.O", // techs: ["🧱 HTML", "🎨 CSS", "📜 JavaScript", "⚛️ React.js"], // date: "📅 Jan 13, 2025", // },
+    { title: "🏫 Top Coders Academy", features: ["Mock learning platform with payments", "Razorpay SDK for secure transactions", "Built with Next.js Fullstack + Tailwind", "Certificates generated instantly"], link: ["https:tca-vcode.vercel.app/", "https:tca-vcode.vercel.app/"], github: "https:github.com/Vaibhu18/TCA-Cirtificates", techs: ["⚛️ Next.js 15", "🎨 Tailwind CSS", "🗃️ MongoDB", "🔐 NextAuth.js", "💳 Razorpay SDK", "🧪 Zod"], date: "📅 Jan 14, 2025", },
+    { title: "🌐 Personal Portfolio – Developer Showcase", features: ["Modern and responsive developer portfolio", "Showcases skills, projects & background", "Built with Next.js, React & Tailwind", "Clean design, optimized for all devices"], link: ["https:vcode-portfolio.vercel.app", "https:vcode-portfolio.vercel.app"], github: "https:github.com/Vaibhu18/Portfolio-2.O", techs: ["🧱 HTML", "🎨 CSS", "📜 JavaScript", "⚛️ React.js"], date: "📅 Jan 13, 2025", },
 ];
 
 export const PullRequests = [
@@ -82,37 +82,37 @@ export const PullRequests = [
         date: "Aug 2025",
         action: "https://github.com/voxora-cloud/voxora/pull/21",
     },
-    {
-        request: "feat: add contrast color utility for team color display in agent details",
-        skills: ["Frontend", "React"],
-        organization: "Voxora Cloud",
-        status: "Merged",
-        date: "Aug 2025",
-        action: "https://github.com/voxora-cloud/voxora/pull/21",
-    },
-    {
-        request: "feat: add contrast color utility for team color display in agent details",
-        skills: ["Frontend", "React"],
-        organization: "Voxora Cloud",
-        status: "Merged",
-        date: "Aug 2025",
-        action: "https://github.com/voxora-cloud/voxora/pull/21",
-    },
-    {
-        request: "feat: add contrast color utility for team color display in agent details",
-        skills: ["Frontend", "React"],
-        organization: "Voxora Cloud",
-        status: "Merged",
-        date: "Aug 2025",
-        action: "https://github.com/voxora-cloud/voxora/pull/21",
-    },
-    {
-        request: "feat: add contrast color utility for team color display in agent details",
-        skills: ["Frontend", "React"],
-        organization: "Voxora Cloud",
-        status: "Merged",
-        date: "Aug 2025",
-        action: "https://github.com/voxora-cloud/voxora/pull/21",
-    }
+    // {
+    //     request: "feat: add contrast color utility for team color display in agent details",
+    //     skills: ["Frontend", "React"],
+    //     organization: "Voxora Cloud",
+    //     status: "Merged",
+    //     date: "Aug 2025",
+    //     action: "https://github.com/voxora-cloud/voxora/pull/21",
+    // },
+    // {
+    //     request: "feat: add contrast color utility for team color display in agent details",
+    //     skills: ["Frontend", "React"],
+    //     organization: "Voxora Cloud",
+    //     status: "Merged",
+    //     date: "Aug 2025",
+    //     action: "https://github.com/voxora-cloud/voxora/pull/21",
+    // },
+    // {
+    //     request: "feat: add contrast color utility for team color display in agent details",
+    //     skills: ["Frontend", "React"],
+    //     organization: "Voxora Cloud",
+    //     status: "Merged",
+    //     date: "Aug 2025",
+    //     action: "https://github.com/voxora-cloud/voxora/pull/21",
+    // },
+    // {
+    //     request: "feat: add contrast color utility for team color display in agent details",
+    //     skills: ["Frontend", "React"],
+    //     organization: "Voxora Cloud",
+    //     status: "Merged",
+    //     date: "Aug 2025",
+    //     action: "https://github.com/voxora-cloud/voxora/pull/21",
+    // }
 ];
 

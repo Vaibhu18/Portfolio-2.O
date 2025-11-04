@@ -8,7 +8,7 @@ const Footer = () => {
         setYear(new Date().getFullYear())
     }, [])
     return (
-        <div className="w-[100vw] sm:w-[85vw] md:w-[60vw] mx-auto mt-8 mb-[80px] flex justify-center">
+        <div className="w-screen sm:w-[85vw] md:w-[60vw] mx-auto pt-10 pb-[110px] flex justify-center">
             <h1 className='mx-auto font-medium text-[12px] md:text-[14px]'>© {year} Portfolio (Vaibhav Shinde). All Rights Reserved.</h1>
         </div>
     )
