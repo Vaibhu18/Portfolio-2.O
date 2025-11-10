@@ -32,7 +32,7 @@ const Header = () => {
                                 <img
                                     src="/profile1.jpg"
                                     alt="Vaibhav Shinde"
-                                    className="relative w-28 h-32 sm:w-36 sm:h-40 lg:w-40 lg:h-44 rounded-2xl object-cover border-4 border-white dark:border-gray-800 shadow-2xl transition-transform duration-500 group-hover:scale-105"
+                                    className="relative w-28 h-32 sm:w-36 sm:h-40 lg:w-40 lg:h-44 rounded-2xl object-center border-4 border-white dark:border-gray-800 shadow-2xl transition-transform duration-500 group-hover:scale-105"
                                 />
                             </div>
 

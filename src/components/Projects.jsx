@@ -5,6 +5,27 @@ import React from "react";
 
 const projects = [
     {
+        title: "Astro Straits – AI Astrology Chat App",
+        features: [
+            "AI-powered astrology platform featuring 'Astro' – your intelligent AI astrologer",
+            "Real-time astrological guidance, predictions, and chart-based insights powered by Gemini AI",
+            "Fullstack Next.js architecture with unified frontend and backend",
+            "Secure authentication and user management using NextAuth.js",
+            "Persistent user data and chat history stored in MongoDB with Mongoose",
+            "Beautiful, responsive, and accessible UI built with Next.js, Tailwind, and shadcn/ui components",
+            "Gemini API integration enabling natural, context-aware astrological conversations",
+            "Deployed on Vercel with fast, scalable, and globally optimized performance"
+        ],
+        link: [
+            "https://astrostraits-ai.vercel.app/",
+            "https://astrostraits-ai.vercel.app/"
+        ],
+        github: "https://github.com/Vaibhu18/Astro-Straits",
+        techs: ["⚛️ Next.js (Fullstack)", "🛡️ NextAuth.js", "🟢 MongoDB + Mongoose", "🎨 shadcn/ui + TailwindCSS", "🤖 Gemini AI API", "☁️ Vercel Deployment"],
+        date: "📅 November 10, 2025",
+    }
+    ,
+    {
         title: "Nexora.AI – Intelligent Search Engine",
         features: [
             "AI-powered conversational search delivering precise, real-time answers",
