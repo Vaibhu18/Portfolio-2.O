@@ -23,8 +23,38 @@ const projects = [
         github: "https://github.com/Vaibhu18/Astro-Straits",
         techs: ["⚛️ Next.js (Fullstack)", "🛡️ NextAuth.js", "🟢 MongoDB + Mongoose", "🎨 shadcn/ui + TailwindCSS", "🤖 Gemini AI API", "☁️ Vercel Deployment"],
         date: "📅 November 10, 2025",
-    }
-    ,
+    },
+    {
+        title: "Veltrix AI Messenger – Real-Time Chat with Gemini AI",
+        features: [
+            "Real-time messaging app inspired by WhatsApp, powered by Gemini AI for intelligent conversations",
+            "Fullstack MERN architecture with React (Vite) frontend and Express.js backend",
+            "Secure authentication and user sessions using JWT and Passport.js",
+            "One-to-one real-time chat functionality using Socket.IO",
+            "AI-powered assistant integrated via Google Gemini API for contextual chat responses",
+            "Media uploads with secure Cloudinary integration",
+            "Responsive, modern UI built with React, TailwindCSS, and Radix UI components",
+            "Zustand-based global state management for seamless user experience",
+            "Deployed on Render with persistent MongoDB Atlas database and optimized server setup"
+        ],
+        link: [
+            "https://veltrix-ai-chat.onrender.com",
+            "https://veltrix-ai-chat.onrender.com"
+        ],
+        github: "https://github.com/Vaibhu18/veltrix-2.0",
+        techs: [
+            "⚛️ React (Vite)",
+            "🟢 Node.js + Express.js",
+            "💬 Socket.IO",
+            "🗄️ MongoDB + Mongoose",
+            "🔐 JWT + Passport.js",
+            "🎨 TailwindCSS + Radix UI",
+            "☁️ Cloudinary API",
+            "🤖 Google Gemini AI",
+            "🚀 Render Deployment"
+        ],
+        date: "📅 October 30, 2025",
+    },
     {
         title: "Nexora.AI – Intelligent Search Engine",
         features: [
