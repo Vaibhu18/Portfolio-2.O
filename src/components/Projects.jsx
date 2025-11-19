@@ -38,8 +38,10 @@ const projects = [
             "Deployed on Render with persistent MongoDB Atlas database and optimized server setup"
         ],
         link: [
-            "https://veltrix-ai-chat.onrender.com",
-            "https://veltrix-ai-chat.onrender.com"
+            "https://veltrix-messenger.onrender.com",
+            "https://veltrix-messenger.onrender.com",
+            // "https://veltrix-ai-chat.onrender.com",
+            // "https://veltrix-ai-chat.onrender.com"
         ],
         github: "https://github.com/Vaibhu18/veltrix-2.0",
         techs: [
