@@ -9,9 +9,9 @@ const MenuBar = () => {
 
     const menuItems = [
         { name: "Home", icon: <Home className="w-5 h-5" />, href: "/" },
-        { name: "Github", icon: <Github className="w-5 h-5" />, href: "https://github.com/vcode" },
-        { name: "Linkedin", icon: <Linkedin className="w-5 h-5" />, href: "https://linkedin.com/in/vcode" },
-        { name: "Leetcode", icon: <Code2 className="w-5 h-5" />, href: "https://leetcode.com/vcode" },
+        { name: "Github", icon: <Github className="w-5 h-5" />, href: "https://github.com/Vaibhu18" },
+        { name: "Linkedin", icon: <Linkedin className="w-5 h-5" />, href: "https://linkedin.com/in/vaibhu18" },
+        { name: "Leetcode", icon: <Code2 className="w-5 h-5" />, href: "https://leetcode.com/Vaibhav-dev18" },
         {
             name: theme === "light" ? "Dark" : "Light",
             icon: theme === "light" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />,
@@ -20,8 +20,8 @@ const MenuBar = () => {
     ];
 
     return (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[95%] sm:max-w-md z-50">
-            <div className="flex justify-around items-center px-2 py-2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/30 dark:border-gray-700/50 shadow-2xl rounded-2xl transition-all duration-300 ease-out hover:shadow-3xl">
+        <div className="fixed bottom-2 left-1/2 -translate-x-1/2 w-[95%] sm:max-w-md z-50">
+            <div className="flex justify-around items-center px-2 py-2 bg-gray-200/50 dark:bg-zinc-900/80 backdrop-blur-sm border border-gray-500/10 dark:border-gray-700/50 shadow-2xl rounded-2xl transition-all duration-300 ease-out hover:shadow-3xl">
                 {menuItems.map((item) => {
                     const isThemeToggle = !!item.action;
 
@@ -46,12 +46,12 @@ const MenuBar = () => {
                                 </span>
                             </div>
 
-                            <span className="text-[11px] font-semibold tracking-tight opacity-90">
+                            <span className="text-[11px] font-semibold tracking-tight text-black dark:text-white">
                                 {item.name}
                             </span>
 
                             {/* Active indicator dot */}
-                            <div className="absolute -bottom-1 w-1 h-1 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                            <div className="absolute -bottom-1 w-10 h-0.5 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                         </Wrapper>
                     );
                 })}
