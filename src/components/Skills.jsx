@@ -4,85 +4,98 @@ import React from "react";
 
 const Skills = () => {
     return (
-        <section className="w-full sm:w-[85vw] md:w-[65vw] mx-auto px-3 pt-10">
-            {/* Header */}
-            <div className="mb-5">
-                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-                    Skills & Technologies
-                </h1>
-                <p className="text-[15px] text-gray-600 dark:text-gray-400 mt-2 max-w-xl text-start">
-                    A curated list of tools and technologies I use to design, develop, and
-                    deploy modern applications.
-                </p>
-            </div>
+        <section className="relative w-full sm:w-[85vw] md:w-[75vw] mx-auto px-2 sm:px-4 pt-5">
 
-            {/* Skills Grid */}
-            <div className="flex flex-wrap gap-3">
-                {skills.map((skill, index) => (
-                    <div
-                        key={index}
-                        className="flex flex-col items-center gap-1 px-5 py-2 rounded-xl border border-gray-200 dark:border-gray-700
-                        bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 text-sm font-medium
-                        hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/40
-                        transition-colors duration-200"
-                    >
-                        <div className="shrink-0">
+            {/* Background glow */}
+            <div className="absolute -inset-4 bg-linear-to-r from-blue-500/5 via-purple-500/5 to-green-500/5 blur-3xl rounded-3xl" />
+
+            <div className="relative bg-white/70 dark:bg-zinc-900 backdrop-blur-xl rounded-md border border-gray-200/40 dark:border-gray-800/40 p-6 sm:p-8 shadow-lg">
+
+                {/* Header */}
+                <div className="mb-5">
+                    <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+                        Skills & Technologies
+                    </h1>
+                    <p className="text-[15px] text-gray-600 dark:text-gray-400 mt-2 max-w-xl">
+                        A curated list of tools and technologies I use to design, develop, and
+                        deploy modern applications.
+                    </p>
+                    <div className="mt-2 h-1 w-14 rounded-full bg-linear-to-r from-red-500 via-pink-500 to-blue-500" />
+                </div>
+
+                {/* Skills Grid */}
+                <div className="flex flex-wrap gap-2">
+                    {skills.map((skill, index) => (
+                        <div
+                            key={index}
+                            className="group flex flex-col items-center gap-1 px-5 py-3 rounded-md
+                            border border-gray-200 dark:border-gray-700
+                            bg-gray-50 dark:bg-zinc-950
+                            text-sm font-medium
+                            hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30
+                            hover:shadow-md transition-all duration-300"
+                        >
                             <Image
                                 src={skill.image}
-                                width={33}
-                                height={33}
+                                width={34}
+                                height={34}
                                 alt={skill.name}
                                 className="object-contain transition-transform duration-300 group-hover:scale-110"
                             />
+                            <span className="text-sm font-medium text-gray-700 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                                {skill.name}
+                            </span>
                         </div>
-                        <span className="text-sm font-medium text-gray-700 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                            {skill.name}
-                        </span>
+                    ))}
+                </div>
+
+                {/* Skill Categories */}
+                <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="text-center p-5 rounded-2xl border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/20">
+                        <h3 className="font-semibold text-blue-600 dark:text-blue-400 mb-2">
+                            Frontend
+                        </h3>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                            React, Next.js, Tailwind, Redux, TanStack Query
+                        </p>
                     </div>
-                ))}
-            </div>
 
-            {/* Skill Categories */}
-            <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
-                <div className="text-center p-5 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
-                    <h3 className="font-semibold text-blue-600 dark:text-blue-400 mb-1.5">
-                        Frontend
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                        React, Next.js, Tailwind, Redux
-                    </p>
+                    <div className="text-center p-5 rounded-2xl border border-purple-200 dark:border-purple-800 bg-purple-50 dark:bg-purple-900/20">
+                        <h3 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">
+                            Backend
+                        </h3>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                            Node.js, Express, Python, Microservices
+                        </p>
+                    </div>
+
+                    <div className="text-center p-5 rounded-2xl border border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/20">
+                        <h3 className="font-semibold text-green-600 dark:text-green-400 mb-2">
+                            DevOps
+                        </h3>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                            Docker, AWS, Git, Redis
+                        </p>
+                    </div>
                 </div>
-                <div className="text-center p-5 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800">
-                    <h3 className="font-semibold text-purple-600 dark:text-purple-400 mb-1.5">
-                        Backend
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Node.js, Express, Python, Microservices
-                    </p>
-                </div>
-                <div className="text-center p-5 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800">
-                    <h3 className="font-semibold text-green-600 dark:text-green-400 mb-1.5">
-                        DevOps
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Docker, AWS, Git, Redis
+
+                {/* Footer Note */}
+                <div className="text-center mt-8">
+                    <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+                        Constantly learning, improving, and adapting to new technologies.
                     </p>
                 </div>
             </div>
 
-            {/* Footer Note */}
-            <div className="text-center mt-6">
-                <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
-                    Constantly learning, improving, and adapting to new technologies.
-                </p>
-            </div>
+            {/* Bottom Divider */}
+            <div className="mt-5 h-px bg-linear-to-r from-transparent via-gray-300/50 dark:via-gray-700/40 to-transparent" />
         </section>
     );
 };
 
 export default Skills;
 
-// Skills Data
+/* Skills Data */
 const skills = [
     { name: "C", image: "/images/icons8-c-100.png" },
     { name: "Java", image: "/images/icons8-java-100.png" },
@@ -93,6 +106,7 @@ const skills = [
     { name: "Tailwind CSS", image: "/images/icons8-tailwind-css-100.png" },
     { name: "React.js", image: "/images/icons8-react-100.png" },
     { name: "Redux", image: "/images/icons8-redux-100.png" },
+    { name: "TanStack Query", image: "/images/tanstack.png" },
     { name: "Next.js", image: "/images/icons8-nextjs-100.png" },
     { name: "Node.js", image: "/images/icons8-nodejs-100.png" },
     { name: "Express.js", image: "/images/express.png" },
