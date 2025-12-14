@@ -3,7 +3,7 @@ import React from "react";
 
 const AboutMe = () => {
     return (
-        <section className="relative w-full sm:w-[85vw] md:w-[75vw] mx-auto px-2 sm:px-4 pt-5">
+        <section className="relative w-full overflow-hidden sm:w-[85vw] md:w-[75vw] mx-auto px-2 sm:px-4 pt-5">
 
             {/* Subtle background glow */}
             <div className="absolute -inset-4 bg-linear-to-r from-red-500/5 via-pink-500/5 to-blue-500/5 blur-3xl rounded-3xl" />

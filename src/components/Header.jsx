@@ -16,7 +16,7 @@ const Header = () => {
     };
 
     return (
-        <section className="relative flex justify-center px-4 lg:px-6 overflow-hidden pt-10 py-5">
+        <section className="relative flex justify-center px-4 lg:px-6 overflow-hidden pt-10 py-5 mx-auto">
             {/* Animated Background */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(236,72,153,0.15),transparent_60%)]"></div>
 

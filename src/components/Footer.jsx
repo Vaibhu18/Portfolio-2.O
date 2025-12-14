@@ -10,7 +10,7 @@ const Footer = () => {
     }, []);
 
     return (
-        <footer className="relative w-full sm:w-[85vw] md:w-[60vw] mx-auto pt-14 pb-[110px] px-4">
+        <footer className="relative w-full overflow-hidden sm:w-[85vw] md:w-[60vw] mx-auto pt-14 pb-[110px] px-4">
 
             {/* Top divider */}
             <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-gray-300/50 dark:via-gray-700/40 to-transparent" />

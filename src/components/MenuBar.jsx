@@ -20,7 +20,7 @@ const MenuBar = () => {
     ];
 
     return (
-        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[94%] sm:max-w-md z-50">
+        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[90%] sm:max-w-md z-50">
 
             {/* Dock */}
             <div className="relative flex justify-between items-center px-4 py-3
