@@ -1,141 +1,93 @@
 "use client";
-import React, { useState } from "react";
-import Link from "next/link";
-import { Home, Github, Linkedin, Code2, Sun, Moon } from "lucide-react";
+import React from "react";
+import { FaHome, FaGithub, FaLinkedin, FaBriefcase } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
+import { IoSunny, IoMoon } from "react-icons/io5";
 import { useTheme } from "next-themes";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const MenuBar = () => {
   const { theme, setTheme } = useTheme();
-  const [hoveredItem, setHoveredItem] = useState(null);
+  const router = useRouter();
+
+  const handleClick = (href) => {
+    router.push(href);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const menuItems = [
+    { icon: <FaHome size={18} />, label: "Home", href: "/", external: false },
     {
-      name: "Home",
-      icon: <Home className="w-5 h-5" />,
-      href: "/",
-      color: "from-violet-600 to-indigo-600",
-      glow: "shadow-[0_8px_28px_rgba(124,58,237,0.6)]",
+      icon: <FaBriefcase size={18} />,
+      label: "Projects",
+      href: "/projects",
+      external: false,
     },
     {
-      name: "Github",
-      icon: <Github className="w-5 h-5" />,
+      icon: <FaGithub size={18} />,
+      label: "Github",
       href: "https://github.com/Vaibhu18",
-      color: "from-gray-700 to-gray-900",
-      glow: "shadow-[0_8px_28px_rgba(55,65,81,0.6)]",
+      external: true,
     },
     {
-      name: "Linkedin",
-      icon: <Linkedin className="w-5 h-5" />,
-      href: "https://linkedin.com/in/vaibhu18",
-      color: "from-sky-500 to-blue-600",
-      glow: "shadow-[0_8px_28px_rgba(14,165,233,0.6)]",
+      icon: <FaLinkedin size={18} />,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/vaibhu18",
+      external: true,
     },
     {
-      name: "Leetcode",
-      icon: <Code2 className="w-5 h-5" />,
-      href: "https://leetcode.com/Vaibhav-dev18",
-      color: "from-amber-500 to-orange-500",
-      glow: "shadow-[0_8px_28px_rgba(245,158,11,0.6)]",
-    },
-    {
-      name: theme === "light" ? "Dark" : "Light",
-      icon:
-        theme === "light" ? (
-          <Moon className="w-5 h-5" />
-        ) : (
-          <Sun className="w-5 h-5" />
-        ),
-      action: () => setTheme(theme === "light" ? "dark" : "light"),
-      color: "from-purple-500 to-fuchsia-600",
-      glow: "shadow-[0_8px_28px_rgba(168,85,247,0.6)]",
+      icon: <SiLeetcode size={18} />,
+      label: "LeetCode",
+      href: "https://leetcode.com/vaibhu18/",
+      external: true,
     },
   ];
 
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[95%] max-w-[440px] z-50 font-sans">
-      {/* Outer Glow */}
-      <div className="absolute -inset-[3px] rounded-[30px] blur-[18px] bg-gradient-to-br from-indigo-500/40 via-purple-500/30 to-pink-500/20 animate-pulse" />
-
-      {/* Dock */}
+    <div className="fixed bottom-5 left-1/2 -translate-x-1/2 w-[96%] max-w-105 z-50">
       <div
-        className="relative z-10 flex items-center justify-around px-3 pt-2 rounded-[20px]
-        bg-black/60 border border-white/10 backdrop-blur-2xl shadow-[0_24px_60px_rgba(0,0,0,0.55)]
-      "
+        className="flex justify-between items-center px-3 py-2 rounded-xl backdrop-blur-md bg-black/80 dark:bg-white/80 border border-white/20 dark:border-white/10 shadow-lg"
       >
         {menuItems.map((item, index) => {
-          const isThemeToggle = !!item.action;
-          const showSeparatorBefore = index === menuItems.length - 1;
-
-          const inner = (
-            <>
-              {/* Tooltip */}
-              <span
-                className="absolute -top-10 left-1/2 -translate-x-1/2 text-[11px] font-semibold px-3 py-1 rounded-md
-                bg-black/90 text-white/90 border border-white/10 opacity-0 group-hover:opacity-100
-                translate-y-1 group-hover:translate-y-0 transition-all duration-150 whitespace-nowrap backdrop-blur"
+          if (item.external) {
+            return (
+              <a
+                key={index}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center justify-center gap-1 px-2 py-1 text-gray-300 dark:text-gray-800 hover:text-white dark:hover:text-black transition cursor-pointer"
               >
-                {item.name}
-              </span>
-
-              {/* Icon */}
-              <div
-                className={`
-                  relative w-11 h-11 flex items-center justify-center rounded-xl overflow-hidden
-                  bg-gradient-to-br ${item.color}
-                  transition-all duration-200
-                  ${hoveredItem === item.name ? item.glow : "shadow-md"}
-                `}
-              >
-                <div className="absolute top-1 left-1 w-8 h-3 bg-white/20 rounded-full" />
-                <div className="relative z-10 text-white">{item.icon}</div>
-              </div>
-
-              {/* Label */}
-              <span className="text-[10px] font-semibold text-white/60 group-hover:text-white transition">
-                {item.name}
-              </span>
-
-              {/* Dot */}
-              <span className="w-1 h-1 rounded-full bg-transparent group-hover:bg-white/50 transition" />
-            </>
-          );
+                {item.icon}
+                <span className="text-xs font-medium">{item.label}</span>
+              </a>
+            );
+          }
 
           return (
-            <React.Fragment key={item.name}>
-              {showSeparatorBefore && (
-                <div className="w-[1px] h-9 bg-white/10 rounded shrink-0" />
-              )}
-
-              {isThemeToggle ? (
-                <button
-                  onClick={item.action}
-                  className="group relative flex flex-col items-center gap-1 min-w-[54px] p-1 rounded-xl
-                    transition-transform duration-200 hover:-translate-y-1 hover:scale-100 active:scale-95"
-                  onMouseEnter={() => setHoveredItem(item.name)}
-                  onMouseLeave={() => setHoveredItem(null)}
-                >
-                  {inner}
-                </button>
-              ) : (
-                <Link
-                  href={item.href}
-                  target={item.href?.startsWith("http") ? "_blank" : "_self"}
-                  rel={
-                    item.href?.startsWith("http")
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
-                  className="group relative flex flex-col items-center gap-1 min-w-[54px] p-1 rounded-xl
-                    transition-transform duration-200 hover:-translate-y-1 hover:scale-100 active:scale-95"
-                  onMouseEnter={() => setHoveredItem(item.name)}
-                  onMouseLeave={() => setHoveredItem(null)}
-                >
-                  {inner}
-                </Link>
-              )}
-            </React.Fragment>
+            <Link
+              key={index}
+              href={item.href}
+              onClick={() => handleClick(item.href)}
+              scroll={true}
+              className="flex flex-col items-center justify-center gap-1 px-2 py-1 text-gray-300 dark:text-gray-800 hover:text-white dark:hover:text-black transition cursor-pointer"
+            >
+              {item.icon}
+              <span className="text-xs font-medium">{item.label}</span>
+            </Link>
           );
         })}
+
+        <div
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="flex flex-col items-center justify-center gap-1 px-2 py-1 text-gray-300 dark:text-gray-800 hover:text-white dark:hover:text-black transition cursor-pointer"
+        >
+          {theme === "dark" ? <IoSunny size={18} /> : <IoMoon size={18} />}
+          <span className="text-xs font-medium">
+            {theme === "dark" ? "Light" : "Dark"}
+          </span>
+        </div>
       </div>
     </div>
   );

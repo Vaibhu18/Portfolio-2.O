@@ -1,28 +1,26 @@
-import AboutMe from '@/components/AboutMe'
-import Education from '@/components/Education'
-import Footer from '@/components/Footer'
-import GetInTouch from '@/components/GetInTouch'
-import Header from '@/components/Header'
-import MenuBar from '@/components/MenuBar'
-import OpenSource from '@/components/OpenSource'
-import Projects from '@/components/Projects'
-import Skills from '@/components/Skills'
-import React from 'react'
+import AboutMe from "@/components/AboutMe";
+import Certificates from "@/components/Certificates";
+import Education from "@/components/Education";
+import GetInTouch from "@/components/GetInTouch";
+import HeroSection from "@/components/HeroSection";
+import OpenSource from "@/components/OpenSource";
+import Projects from "@/components/Projects";
+import SkillsAndTech from "@/components/SkillsAndTech";
+import React from "react";
 
-const Home = () => {
+const Page = () => {
   return (
-    <div className='relative min-h-screen'>
-      <Header />
+    <div className="relative min-h-screen">
+      <HeroSection />
       <AboutMe />
-      <Education />
-      <Skills />
-      <OpenSource />
+      <SkillsAndTech />
       <Projects />
+      <OpenSource />
+      <Education />
+      <Certificates />
       <GetInTouch />
-      <Footer />
-      <MenuBar />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Page;

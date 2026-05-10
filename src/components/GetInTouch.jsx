@@ -1,205 +1,235 @@
 "use client";
-import { ArrowRight } from "lucide-react";
-import { useState } from "react";
+import axios from "axios";
+import { Loader2 } from "lucide-react";
+import Link from "next/link";
+import React, { useState } from "react";
+import { MdOutlineEmail } from "react-icons/md";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const GetInTouch = () => {
-    const [userInfo, setUserInfo] = useState({ name: "", email: "", message: "" });
-    const [isSubmitting, setIsSubmitting] = useState(false);
+  const [userData, setUserData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [sent, setSent] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-    const handleMessage = async (e) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-        console.log(userInfo);
-        setTimeout(() => {
-            setIsSubmitting(false);
-            setUserInfo({ name: "", email: "", message: "" });
-        }, 2000);
-    };
+  const handleChange = (e) => {
+    setUserData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
-    return (
-        <section className="relative w-full overflow-hidden sm:w-[85vw] md:w-[75vw] mx-auto px-2 sm:px-4 pt-5">
+  const handleSend = async (e) => {
+    e.preventDefault();
 
-            {/* Background glow */}
-            <div className="absolute -inset-4 bg-linear-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 blur-3xl rounded-3xl" />
+    setError(null);
+    setSent(null);
 
-            <div className="relative bg-white/70 dark:bg-zinc-900 backdrop-blur-xl rounded-md border border-gray-200/40 dark:border-gray-800/40 p-6 sm:p-10 shadow-lg">
+    const { name, email, message } = userData;
 
-                {/* Header */}
-                <div className="mb-5">
-                    <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-                        Get in Touch
-                    </h1>
-                    <div className="mt-2 h-1 w-14 rounded-full bg-linear-to-r from-blue-500 via-purple-500 to-pink-500" />
-                </div>
+    if (!name || !email || !message) {
+      setError("All fields are required");
+      return;
+    }
 
-                {/* Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+    if (message.length < 10) {
+      setError("Message must be at least 10 characters");
+      return;
+    }
 
-                    {/* Contact Form */}
-                    <div className="relative">
-                        <div className="bg-white dark:bg-zinc-950 border border-gray-200 dark:border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl">
-                            <form onSubmit={handleMessage} className="space-y-5">
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Invalid email address");
+      return;
+    }
 
-                                {/* Name */}
-                                <div>
-                                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                                        Your Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        placeholder="John Doe"
-                                        value={userInfo.name}
-                                        onChange={(e) =>
-                                            setUserInfo({ ...userInfo, name: e.target.value })
-                                        }
-                                        required
-                                        className="mt-1 w-full px-4 py-2.5 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-zinc-900
-                                        text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400
-                                        transition-all outline-none"
-                                    />
-                                </div>
+    setLoading(true);
 
-                                {/* Email */}
-                                <div>
-                                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                                        Email Address
-                                    </label>
-                                    <input
-                                        type="email"
-                                        placeholder="john@example.com"
-                                        value={userInfo.email}
-                                        onChange={(e) =>
-                                            setUserInfo({ ...userInfo, email: e.target.value })
-                                        }
-                                        required
-                                        className="mt-1 w-full px-4 py-2.5 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-zinc-900
-                                        text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400
-                                        outline-none transition-all"
-                                    />
-                                </div>
+    try {
+      const response = await axios.post("/api/email", userData);
 
-                                {/* Message */}
-                                <div>
-                                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                                        Your Message
-                                    </label>
-                                    <textarea
-                                        rows="5"
-                                        placeholder="Tell me about your project..."
-                                        value={userInfo.message}
-                                        onChange={(e) =>
-                                            setUserInfo({ ...userInfo, message: e.target.value })
-                                        }
-                                        required
-                                        className="mt-1 w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-zinc-900
-                                        text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400
-                                        outline-none transition-all resize-none"
-                                    ></textarea>
-                                </div>
+      if (!response.data.success) {
+        setError(response.data.message);
+        return;
+      }
 
-                                {/* Submit */}
-                                <button
-                                    type="submit"
-                                    disabled={isSubmitting}
-                                    className="group relative w-full flex items-center justify-center gap-3
-    bg-linear-to-r from-blue-600 via-purple-600 to-pink-600
-    hover:from-blue-700 hover:via-purple-700 hover:to-pink-700
-    text-white font-semibold
-    py-3.5 rounded-xl
-    shadow-[0_10px_30px_rgba(79,70,229,0.35)]
-    hover:shadow-[0_16px_40px_rgba(79,70,229,0.45)]
-    transition-all duration-300
-    hover:-translate-y-1
-    disabled:opacity-50 disabled:cursor-not-allowed
-    overflow-hidden cursor-pointer"
-                                >
-                                    {/* subtle animated shine */}
-                                    <span className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <span className="absolute -left-1/2 top-0 h-full w-1/2 bg-white/20 skew-x-[-20deg] animate-[shine_1.2s_linear_infinite]" />
-                                    </span>
+      setSent(response.data.message);
+      setUserData({ name: "", email: "", message: "" });
+      setTimeout(() => setSent(null), 3000);
+    } catch (error) {
+      console.error(error.response?.data);
+      alert(error.response?.data?.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
 
-                                    {isSubmitting ? (
-                                        <>
-                                            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                                            <span>Sending...</span>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <span>Send Message</span>
-                                            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                                        </>
-                                    )}
-                                </button>
+  const inputClass =
+    "w-full px-3 py-2 text-sm rounded-lg border border-neutral-300 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-300 dark:focus:ring-neutral-700 transition";
 
-                            </form>
-                        </div>
-                    </div>
+  return (
+    <section className="w-full px-6 sm:px-12 lg:px-20 bg-white dark:bg-neutral-950">
+      <div className="w-full max-w-5xl mx-auto">
+        <h2 className="mb-3 text-2xl font-semibold tracking-tight text-neutral-900 dark:text-white">
+          Get In Touch
+        </h2>
 
-                    {/* Info + Socials */}
-                    <div className="flex flex-col justify-center gap-8">
-
-                        {/* Description */}
-                        <p className="text-[15px] text-gray-600 dark:text-gray-300 leading-relaxed">
-                            I'm always excited to take on new challenges and collaborate on
-                            innovative projects. Whether you need a web app, a redesign, or
-                            technical consultation — I’d love to help.
-                        </p>
-
-                        {/* Socials */}
-                        <div>
-                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                                Connect with me
-                            </h3>
-                            <div className="flex flex-wrap gap-4">
-                                {[
-                                    { label: "Email", href: "mailto:vcode.dev18@gmail.com", img: "/email.png" },
-                                    { label: "GitHub", href: "https://github.com/Vaibhu18", img: "/github.png" },
-                                    { label: "LinkedIn", href: "https://linkedin.com/in/vcode", img: "/linkedin.png" },
-                                ].map((item) => (
-                                    <a
-                                        key={item.label}
-                                        href={item.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="group flex items-center gap-3 px-3 py-2 rounded-xl
-                                        bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700
-                                        shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                                    >
-                                        <img src={item.img} alt="" className="w-11 h-11 rounded-lg" />
-                                        <span className="font-medium text-gray-700 dark:text-gray-300">
-                                            {item.label}
-                                        </span>
-                                    </a>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Direct Contact */}
-                        <div className="bg-linear-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20
-                        rounded-2xl p-5 border border-blue-200 dark:border-blue-800 shadow-inner">
-                            <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
-                                Prefer direct contact?
-                            </h4>
-                            <p className="text-sm text-gray-600 dark:text-gray-300">
-                                Shoot me an email at{" "}
-                                <a
-                                    href="mailto:vcode.dev18@gmail.com"
-                                    className="text-blue-500 hover:text-blue-600 font-medium"
-                                >
-                                    vcode.dev18@gmail.com
-                                </a>{" "}
-                                and I’ll get back to you within 24 hours.
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <form
+            onSubmit={handleSend}
+            className="flex flex-col gap-4 border p-4 rounded-md"
+          >
+            <div className="flex flex-col gap-1">
+              <label
+                htmlFor="name"
+                className="text-xs font-medium text-neutral-600 dark:text-neutral-400"
+              >
+                Name
+              </label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                value={userData.name}
+                onChange={handleChange}
+                placeholder="Your name"
+                required
+                className={inputClass}
+              />
             </div>
 
-            {/* Bottom divider */}
-            <div className="mt-5 h-px bg-linear-to-r from-transparent via-gray-300/50 dark:via-gray-700/40 to-transparent" />
-        </section>
-    );
+            <div className="flex flex-col gap-1.5">
+              <label
+                htmlFor="email"
+                className="text-xs font-medium text-neutral-600 dark:text-neutral-400"
+              >
+                Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                value={userData.email}
+                onChange={handleChange}
+                placeholder="you@example.com"
+                required
+                className={inputClass}
+              />
+            </div>
+
+            <div className="flex flex-col gap-1.5">
+              <label
+                htmlFor="message"
+                className="text-xs font-medium text-neutral-600 dark:text-neutral-400"
+              >
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={5}
+                value={userData.message}
+                onChange={handleChange}
+                placeholder="What's on your mind?"
+                required
+                className={`${inputClass} resize-none`}
+              />
+            </div>
+
+            {error && (
+              <p className="text-red-500 text-xs tracking-wide">{error}</p>
+            )}
+            {sent && (
+              <p className="text-green-500 text-xs tracking-wide">{sent}</p>
+            )}
+
+            <button
+              type="submit"
+              className="
+                mt-1 px-4 py-2 text-xs font-medium rounded-lg
+                bg-neutral-900 text-white dark:bg-white dark:text-neutral-900
+                hover:opacity-85 active:opacity-75
+                transition-opacity duration-150
+              "
+            >
+              {loading ? (
+                <>
+                  <div className="flex items-center justify-center gap-2">
+                    <Loader2 size={15} className=" animate-spin" />
+                    <p>Sending Message</p>
+                  </div>
+                </>
+              ) : (
+                "Send Message"
+              )}
+            </button>
+          </form>
+
+          <div className="flex flex-col gap-6 text-sm text-neutral-600 dark:text-neutral-400">
+            <p className="leading-relaxed">
+              I build impactful digital experiences and love collaborating with
+              driven people. If you need a web application, a redesign, or
+              technical expertise, feel free to reach out.
+            </p>
+            <div className="flex flex-col gap-2">
+              <p className="text-xs font-medium uppercase tracking-widest text-neutral-500 dark:text-neutral-500">
+                Connect
+              </p>
+              <div className="flex gap-2">
+                {[
+                  {
+                    label: "Email",
+                    href: "mailto:vcode.dev18@gmail.com",
+                    icon: <MdOutlineEmail size={18} />,
+                  },
+                  {
+                    label: "GitHub",
+                    href: "https://github.com/Vaibhu18",
+                    external: true,
+                    icon: <FaGithub size={18} />,
+                  },
+                  {
+                    label: "LinkedIn",
+                    href: "https://www.linkedin.com/in/vaibhu18",
+                    external: true,
+                    icon: <FaLinkedin size={18} />,
+                  },
+                ].map(({ label, href, external, icon }) => (
+                  <Link
+                    key={label}
+                    href={href}
+                    target={external ? "_blank" : undefined}
+                    rel={external ? "noopener noreferrer" : undefined}
+                    className="text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors duration-150 flex items-center px-3 py-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                  >
+                    <span className="mr-1">{icon}</span>
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="pt-5 border-t border-neutral-200 dark:border-neutral-800">
+              <p className="text-xs font-medium text-neutral-500 dark:text-neutral-500 uppercase tracking-widest mb-1.5">
+                Prefer direct contact?
+              </p>
+              <p className="leading-relaxed">
+                Email me at{" "}
+                <Link
+                  href="mailto:vcode.dev18@gmail.com"
+                  className="font-medium text-neutral-800 dark:text-neutral-200 hover:underline underline-offset-2"
+                >
+                  vcode.dev18@gmail.com
+                </Link>{" "}
+                — I respond within 24 hours.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default GetInTouch;
