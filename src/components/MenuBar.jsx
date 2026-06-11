@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { FaHome, FaGithub, FaLinkedin, FaBriefcase } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
@@ -45,11 +46,12 @@ const MenuBar = () => {
   ];
 
   return (
-    <div className="fixed bottom-5 left-1/2 -translate-x-1/2 w-[96%] max-w-105 z-50">
-      <div
-        className="flex justify-between items-center px-3 py-2 rounded-xl backdrop-blur-md bg-black/80 dark:bg-white/80 border border-white/20 dark:border-white/10 shadow-lg"
-      >
+    <div className="fixed bottom-0 md:bottom-3 left-1/2 -translate-x-1/2 w-full max-w-md z-50">
+      <div className="flex items-center backdrop-blur-xl bg-black/70 dark:bg-white/70 border border-white/10 rounded-tl-2xl rounded-tr-2xl md:rounded-2xl shadow-xl overflow-hidden">
         {menuItems.map((item, index) => {
+          const baseClass =
+            "flex flex-1 flex-col items-center justify-center py-3 text-gray-300 dark:text-gray-900 hover:text-white dark:hover:text-black transition";
+
           if (item.external) {
             return (
               <a
@@ -57,10 +59,10 @@ const MenuBar = () => {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center gap-1 px-2 py-1 text-gray-300 dark:text-gray-800 hover:text-white dark:hover:text-black transition cursor-pointer"
+                className={baseClass}
               >
                 {item.icon}
-                <span className="text-xs font-medium">{item.label}</span>
+                <span className="text-[12px] mt-1">{item.label}</span>
               </a>
             );
           }
@@ -70,24 +72,24 @@ const MenuBar = () => {
               key={index}
               href={item.href}
               onClick={() => handleClick(item.href)}
-              scroll={true}
-              className="flex flex-col items-center justify-center gap-1 px-2 py-1 text-gray-300 dark:text-gray-800 hover:text-white dark:hover:text-black transition cursor-pointer"
+              className={baseClass}
             >
               {item.icon}
-              <span className="text-xs font-medium">{item.label}</span>
+              <span className="text-[12px] mt-1">{item.label}</span>
             </Link>
           );
         })}
 
-        <div
+        {/* Theme Toggle */}
+        <button
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="flex flex-col items-center justify-center gap-1 px-2 py-1 text-gray-300 dark:text-gray-800 hover:text-white dark:hover:text-black transition cursor-pointer"
+          className="flex flex-1 flex-col items-center justify-center py-2 text-gray-300 dark:text-gray-900 hover:text-white dark:hover:text-black transition"
         >
           {theme === "dark" ? <IoSunny size={18} /> : <IoMoon size={18} />}
-          <span className="text-xs font-medium">
+          <span className="text-[12px] mt-1">
             {theme === "dark" ? "Light" : "Dark"}
           </span>
-        </div>
+        </button>
       </div>
     </div>
   );
