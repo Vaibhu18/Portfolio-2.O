@@ -2,12 +2,39 @@ import React from "react";
 import Image from "next/image";
 
 const Education = () => {
+  // and Piston API
   return (
     <section className="w-full px-6 sm:px-12 lg:px-20 bg-white dark:bg-neutral-950">
       <div className="w-full max-w-5xl mx-auto py-12 md:py-10">
         <h2 className="text-2xl font-space mb-3 font-semibold">Education</h2>
 
         <div className="space-y-6">
+          <div className="flex justify-between items-start gap-4">
+            <div className="flex items-start gap-3">
+              <Image
+                src="https://recruitment.tccollege.org/images/TCCLogo.png"
+                alt="Tuljaram Chaturchand College Logo"
+                width={44}
+                height={44}
+                className="rounded-md object-cover border border-gray-200 dark:border-gray-700"
+              />
+
+              <div>
+                <h3 className="text-sm sm:text-base text-neutral-800 dark:text-gray-100 font-medium dark:font-normal">
+                  Tuljaram Chaturchand College of Arts, Science and Commerce,
+                  Baramati
+                </h3>
+                <p className="text-xs sm:text-sm text-neutral-600 dark:text-gray-300 dark:font-light">
+                  Master of Computer Science
+                </p>
+              </div>
+            </div>
+
+            <span className="text-xs sm:text-sm text-neutral-600 dark:text-gray-400 whitespace-nowrap">
+              2026 – 2028
+            </span>
+          </div>
+
           <div className="flex justify-between items-start gap-4">
             <div className="flex items-start gap-3">
               <Image

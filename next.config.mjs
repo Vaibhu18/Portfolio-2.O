@@ -9,6 +9,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "media.licdn.com",
       },
+      {
+        protocol: "https",
+        hostname: "recruitment.tccollege.org"
+      }
     ],
   },
 };

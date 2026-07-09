@@ -36,7 +36,7 @@ const Certificates = () => {
         </h2>
 
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-4">
-          {CERTIFICATES.slice(0, 3).map((certificate, index) => (
+          {CERTIFICATES.slice(0, 5).map((certificate, index) => (
             <button
               key={index}
               type="button"

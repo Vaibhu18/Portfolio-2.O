@@ -87,7 +87,7 @@ const HeroSection = () => {
         <div className="shrink-0 flex justify-center md:justify-end">
           <div className="relative">
             <Image
-              src="/profile.jpg"
+              src="/profile.png"
               alt="Vaibhav Shinde"
               width={220}
               height={220}
