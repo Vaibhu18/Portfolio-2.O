@@ -5,7 +5,7 @@ import { LuDownload } from "react-icons/lu";
 import { GoMail } from "react-icons/go";
 
 const HeroSection = () => {
-  const fullText = "Vaibhav Shinde";
+  const fullText = "Hi, I'm Vaibhav Shinde";
   const [typedText, setTypedText] = useState("");
   const [index, setIndex] = useState(0);
 
@@ -15,12 +15,12 @@ const HeroSection = () => {
       timeout = setTimeout(() => {
         setTypedText((prev) => prev + fullText[index]);
         setIndex((prev) => prev + 1);
-      }, 80);
+      }, 90);
     } else {
       timeout = setTimeout(() => {
         setTypedText("");
         setIndex(0);
-      }, 3000);
+      }, 2000);
     }
 
     return () => clearTimeout(timeout);
@@ -46,12 +46,11 @@ const HeroSection = () => {
               Full Stack Developer
             </p>
             <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 leading-tight font-space">
-              Hi, I'm{" "}
+              {" "}
               <span className="text-neutral-700 dark:text-neutral-300">
                 {typedText}
                 <span className="animate-pulse">|</span>
               </span>
-              .
             </h1>
           </div>
 

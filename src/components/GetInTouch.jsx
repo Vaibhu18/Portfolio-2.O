@@ -147,7 +147,7 @@ const GetInTouch = () => {
             <button
               type="submit"
               className="
-                mt-1 px-4 py-2 text-xs font-medium rounded-lg
+                mt-1 px-4 py-2.5 text-[13px] font-medium rounded-lg
                 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900
                 hover:opacity-85 active:opacity-75
                 transition-opacity duration-150

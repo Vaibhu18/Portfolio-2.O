@@ -40,7 +40,7 @@ const skills = [
   { name: "C", image: "/Skills/C.png" },
   { name: "C#", image: "/Skills/CSharp.png" },
   { name: "Java", image: "/Skills/Java.png" },
-  { name: "Python", image: "/Skills/Python.png" },
+  // { name: "Python", image: "/Skills/Python.png" },
   { name: "JavaScript", image: "/Skills/JavaScript.png" },
 
   // 🎨 Frontend
@@ -49,27 +49,28 @@ const skills = [
   { name: "Tailwind CSS", image: "/Skills/TailwindCSS.png" },
   { name: "React.js", image: "/Skills/Reactjs.png" },
   { name: "Angular", image: "/Skills/Angular.png" },
-  { name: "Redux", image: "/Skills/Redux.png" },
-  { name: "TanStack Query", image: "/Skills/TanStackQuery.png" },
+  // { name: "Redux", image: "/Skills/Redux.png" },
+  // { name: "TanStack Query", image: "/Skills/TanStackQuery.png" },
   { name: "Next.js", image: "/Skills/Nextjs.png" },
 
   // ⚙️ Backend
-    { name: "Node.js", image: "/Skills/Nodejs.png" },
-    { name: ".NET", image: "/Skills/Dotnet.png" },
-    { name: "Express.js", image: "/Skills/Expressjs.png" },
-    { name: "Socket.IO", image: "/Skills/Socket.png" },
-    {
-      name: "Microservices",
-      image: "/Skills/Microservices.png",
-    },
+  { name: "Node.js", image: "/Skills/Nodejs.png" },
+  { name: ".NET", image: "/Skills/Dotnet.png" },
+  { name: "Express.js", image: "/Skills/Expressjs.png" },
+  { name: "Socket.IO", image: "/Skills/Socket.png" },
+  // {
+  //   name: "Microservices",
+  //   image: "/Skills/Microservices.png",
+  // },
 
   // 🗄️ Databases
-    { name: "MongoDB", image: "/Skills/Mongodb.png" },
-    { name: "PostgreSQL", image: "/Skills/Postgresql.png" },
-    { name: "Redis", image: "/Skills/Redis.png" },
+  { name: "MongoDB", image: "/Skills/Mongodb.png" },
+  { name: "PostgreSQL", image: "/Skills/Postgresql.png" },
+  { name: "SQL Server", image: "/Skills/sqlServer.svg" },
+  { name: "Redis", image: "/Skills/Redis.png" },
 
   // 🚀 DevOps & Tools
-    { name: "Git", image: "/Skills/Git.png" },
-    { name: "Docker", image: "/Skills/Docker.png" },
-    { name: "AWS", image: "/Skills/AWS.png" },
+  { name: "Git", image: "/Skills/Git.png" },
+  // { name: "Docker", image: "/Skills/Docker.png" },
+  { name: "AWS", image: "/Skills/AWS.png" },
 ];
