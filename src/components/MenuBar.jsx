@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
@@ -45,13 +45,19 @@ const menuItems = [
 const MenuBar = () => {
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // Prevent hydration mismatch for next-themes
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const renderItem = (icon, label, isActive) => (
     <div
       className={`
         relative flex flex-col items-center justify-center gap-0.5
-        py-3 px-2 mx-1 rounded-2xl
-        text-gray-700 dark:text-gray-200
+        py-2 md:py-2 mx-0 md:mx-1 rounded-xl
+        text-gray-700 dark:text-gray-300 w-full
         transition-all duration-300 ease-out
         hover:scale-[1.08] active:scale-95
         hover:text-black dark:hover:text-white
@@ -63,30 +69,28 @@ const MenuBar = () => {
       `}
     >
       {icon}
-
-      <span className="text-[11px] font-medium tracking-tight">{label}</span>
+      <span className="text-[10px] md:text-[12px] font-medium tracking-tight whitespace-nowrap">
+        {label}
+      </span>
     </div>
   );
 
   return (
-    <div className="fixed bottom-0 md:bottom-5 left-1/2 -translate-x-1/2 w-full max-w-md px-3 md:px-0 z-50">
+    <div className="fixed bottom-1 left-1/2 -translate-x-1/2 w-[calc(100%-0rem)] md:w-full max-w-lg z-50">
       <div
         className="
-          relative flex items-center overflow-hidden
-          rounded-[26px] md:rounded-[28px]
-          border border-white/25 dark:border-black/10
+          relative flex items-center justify-between overflow-hidden
+          rounded-xl
           bg-gradient-to-b
-          from-white/20 via-white/10 to-white/[0.04]
-          dark:from-black/40 dark:via-black/25 dark:to-black/10
+        from-zinc-50 via-zinc-100 to-zinc-200
+        dark:from-zinc-800 dark:via-zinc-900 dark:to-zinc-950
           backdrop-blur-2xl backdrop-saturate-[180%]
           shadow-[0_8px_30px_-6px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-1px_0_rgba(0,0,0,0.15)] p-1
         "
       >
         {/* Glass Effects */}
-        <div className="pointer-events-none absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent" />
-
+        <div className="pointer-events-none absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-black/20 dark:via-white/20 to-transparent" />
         <div className="pointer-events-none absolute -top-10 -left-10 w-32 h-32 rounded-full bg-white/25 blur-3xl opacity-40 dark:opacity-20" />
-
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-black/10 to-transparent" />
 
         {menuItems.map((item) => {
@@ -99,7 +103,7 @@ const MenuBar = () => {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1"
+                className="flex-1 flex justify-center"
               >
                 {renderItem(item.icon, item.label, false)}
               </a>
@@ -107,7 +111,11 @@ const MenuBar = () => {
           }
 
           return (
-            <Link key={item.label} href={item.href} className="flex-1">
+            <Link
+              key={item.label}
+              href={item.href}
+              className="flex-1 flex justify-center"
+            >
               {renderItem(item.icon, item.label, isActive)}
             </Link>
           );
@@ -120,18 +128,21 @@ const MenuBar = () => {
           className="
             flex-1
             relative flex flex-col items-center justify-center gap-0.5
-            py-3 mx-1 rounded-2xl
-            text-gray-700 dark:text-gray-200
+            py-2 md:py-2.5 mx-0 md:mx-1 rounded-xl
+            text-gray-700 dark:text-gray-300
             transition-all duration-300 ease-out
             hover:scale-[1.08] active:scale-95
             hover:bg-white dark:hover:bg-white/10
             hover:text-black dark:hover:text-white
           "
         >
-          {theme === "dark" ? <IoSunny size={18} /> : <IoMoon size={18} />}
-
-          <span className="text-[11px] font-medium tracking-tight">
-            {theme === "dark" ? "Light" : "Dark"}
+          {mounted && theme === "dark" ? (
+            <IoSunny size={18} />
+          ) : (
+            <IoMoon size={18} />
+          )}
+          <span className="text-[10px] md:text-[11px] font-medium tracking-tight whitespace-nowrap">
+            {mounted && theme === "dark" ? "Light" : "Dark"}
           </span>
         </button>
       </div>
