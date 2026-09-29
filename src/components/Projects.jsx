@@ -1,20 +1,36 @@
-"use client";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { PROJECTS } from "@/lib/Projects";
-import React from "react";
 import ProjectCard from "./ProjectCard";
+import SectionHeading from "./ui/SectionHeading";
 
 const Projects = () => {
-
   return (
-    <section className="w-full px-6 sm:px-12 lg:px-20 bg-white dark:bg-neutral-950">
-      <div className="w-full max-w-5xl mx-auto py-10 md:py-10">
-        <h2 className="text-2xl font-space font-semibold mb-3">
-          Featured Projects
-        </h2>
+    <section id="projects" className="section">
+      <div className="container-page">
+        <SectionHeading
+          index="04"
+          label="Projects"
+          title={
+            <>
+              Selected <span className="serif-accent text-brand">work</span>.
+            </>
+          }
+          subtitle="Production-ready applications featuring real-time communication, AI agent workflows, and full-stack cloud architectures."
+          action={
+            <Link href="/projects" className="btn btn-secondary group">
+              View all projects
+              <ArrowUpRight
+                size={16}
+                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+            </Link>
+          }
+        />
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
-          {PROJECTS.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {PROJECTS.map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </div>

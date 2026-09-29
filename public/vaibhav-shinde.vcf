@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Shinde;Vaibhav;Nagnath;;
+FN:Vaibhav Nagnath Shinde
+NICKNAME:vcode
+TITLE:Full Stack Developer
+ORG:vcode
+TEL;TYPE=CELL,VOICE:+918605112318
+EMAIL;TYPE=INTERNET,PREF:vcode.dev18@gmail.com
+URL:https://itsvcode.vercel.app
+ADR;TYPE=WORK:;;;Baramati;Maharashtra;413133;India
+X-SOCIALPROFILE;TYPE=github:https://github.com/Vaibhu18
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/vaibhu18
+NOTE:Full Stack Developer - .NET\, Next.js\, React\, Node.js
+END:VCARD

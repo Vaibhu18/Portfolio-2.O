@@ -1,10 +1,18 @@
 "use client";
+
+import { useState } from "react";
 import axios from "axios";
-import { Loader2 } from "lucide-react";
-import Link from "next/link";
-import React, { useState } from "react";
-import { MdOutlineEmail } from "react-icons/md";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { AlertCircle, ArrowUpRight, CheckCircle2, Clock, Loader2, Mail, Phone, Send } from "lucide-react";
+import SectionHeading from "./ui/SectionHeading";
+import SocialIcon from "./ui/SocialIcon";
+import VisitingCard from "./VisitingCard";
+import { SITE, SOCIALS } from "@/lib/site";
+
+const CHANNELS = [
+  { id: "email", label: "Email", href: `mailto:${SITE.email}`, handle: SITE.email },
+  { id: "phone", label: "Phone", href: `tel:${SITE.phone.replace(/\s/g, "")}`, handle: SITE.phone },
+  ...SOCIALS.filter((s) => s.id !== "leetcode"),
+];
 
 const GetInTouch = () => {
   const [userData, setUserData] = useState({
@@ -22,25 +30,24 @@ const GetInTouch = () => {
 
   const handleSend = async (e) => {
     e.preventDefault();
-
     setError(null);
     setSent(null);
 
     const { name, email, message } = userData;
 
-    if (!name || !email || !message) {
-      setError("All fields are required");
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      setError("All fields are required.");
       return;
     }
 
-    if (message.length < 10) {
-      setError("Message must be at least 10 characters");
+    if (message.trim().length < 10) {
+      setError("Message must be at least 10 characters long.");
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setError("Invalid email address");
+    if (!emailRegex.test(email.trim())) {
+      setError("Please enter a valid email address.");
       return;
     }
 
@@ -50,182 +57,164 @@ const GetInTouch = () => {
       const response = await axios.post("/api/email", userData);
 
       if (!response.data.success) {
-        setError(response.data.message);
+        setError(response.data.message || "Failed to deliver message.");
         return;
       }
 
-      setSent(response.data.message);
+      setSent(response.data.message || "Message delivered successfully!");
       setUserData({ name: "", email: "", message: "" });
-      setTimeout(() => setSent(null), 3000);
-    } catch (error) {
-      console.error(error.response?.data);
-      alert(error.response?.data?.message || "Something went wrong");
+      setTimeout(() => setSent(null), 5000);
+    } catch (err) {
+      console.error("Contact Form Error:", err.response?.data);
+      setError(err.response?.data?.message || "Something went wrong. Please try again later.");
     } finally {
       setLoading(false);
     }
   };
 
-  const inputClass =
-    "w-full px-3 py-2 text-sm rounded-lg border border-neutral-300 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-300 dark:focus:ring-neutral-700 transition";
-
   return (
-    <section className="w-full px-6 sm:px-12 lg:px-20 bg-white dark:bg-neutral-950">
-      <div className="w-full max-w-5xl mx-auto">
-        <h2 className="mb-3 text-2xl font-semibold tracking-tight text-neutral-900 dark:text-white">
-          Get In Touch
-        </h2>
+    <section id="contact" className="section">
+      <div className="container-page">
+        <SectionHeading
+          index="08"
+          label="Contact"
+          title={
+            <>
+              Let&apos;s build something <span className="serif-accent text-brand">impactful</span>{" "}
+              together.
+            </>
+          }
+          subtitle="Reach out for opportunities, system design, or engineering collaboration."
+        />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          <form
-            onSubmit={handleSend}
-            className="flex flex-col gap-4 border p-4 rounded-md"
-          >
-            <div className="flex flex-col gap-1">
-              <label
-                htmlFor="name"
-                className="text-xs font-medium text-neutral-600 dark:text-neutral-400"
-              >
-                Name
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                value={userData.name}
-                onChange={handleChange}
-                placeholder="Your name"
-                required
-                className={inputClass}
-              />
+        <div className="grid gap-6 lg:grid-cols-12">
+          {/* Visiting card + direct channels */}
+          <aside className="reveal flex flex-col gap-6 lg:col-span-5">
+            <VisitingCard />
+
+            <ul className="card divide-y divide-border overflow-hidden">
+              {CHANNELS.map((c) => {
+                const isExternal = c.href.startsWith("http");
+                return (
+                  <li key={c.id}>
+                    <a
+                      href={c.href}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener noreferrer" : undefined}
+                      className="group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-surface-2"
+                    >
+                      <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-brand-soft text-brand-ink">
+                        {c.id === "email" ? (
+                          <Mail size={17} />
+                        ) : c.id === "phone" ? (
+                          <Phone size={17} />
+                        ) : (
+                          <SocialIcon id={c.id} size={17} />
+                        )}
+                      </span>
+                      <span className="flex min-w-0 flex-1 flex-col">
+                        <span className="text-xs text-muted-foreground">{c.label}</span>
+                        <span className="truncate font-medium">{c.handle}</span>
+                      </span>
+                      <ArrowUpRight
+                        size={17}
+                        className="shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground"
+                      />
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+
+            <p className="flex items-center gap-2 px-1 text-sm text-muted-foreground">
+              <Clock size={15} className="shrink-0" />
+              Usually replies within 24 hours.
+            </p>
+          </aside>
+
+          {/* Form */}
+          <form onSubmit={handleSend} noValidate className="reveal card flex flex-col gap-5 p-6 sm:p-8 lg:col-span-7">
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div className="flex flex-col gap-2">
+                <label htmlFor="name" className="text-sm font-medium">
+                  Name
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autoComplete="name"
+                  value={userData.name}
+                  onChange={handleChange}
+                  placeholder="Alex Morgan"
+                  required
+                  className="field"
+                />
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label htmlFor="email" className="text-sm font-medium">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  value={userData.email}
+                  onChange={handleChange}
+                  placeholder="alex@company.com"
+                  required
+                  className="field"
+                />
+              </div>
             </div>
 
-            <div className="flex flex-col gap-1.5">
-              <label
-                htmlFor="email"
-                className="text-xs font-medium text-neutral-600 dark:text-neutral-400"
-              >
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                value={userData.email}
-                onChange={handleChange}
-                placeholder="you@example.com"
-                required
-                className={inputClass}
-              />
-            </div>
-
-            <div className="flex flex-col gap-1.5">
-              <label
-                htmlFor="message"
-                className="text-xs font-medium text-neutral-600 dark:text-neutral-400"
-              >
+            <div className="flex flex-col gap-2">
+              <label htmlFor="message" className="text-sm font-medium">
                 Message
               </label>
               <textarea
                 id="message"
                 name="message"
-                rows={5}
+                rows={6}
                 value={userData.message}
                 onChange={handleChange}
-                placeholder="What's on your mind?"
+                placeholder="Tell me about your project, idea, or role..."
                 required
-                className={`${inputClass} resize-none`}
+                className="field resize-y"
               />
             </div>
 
-            {error && (
-              <p className="text-red-500 text-xs tracking-wide">{error}</p>
-            )}
-            {sent && (
-              <p className="text-green-500 text-xs tracking-wide">{sent}</p>
-            )}
+            <div aria-live="polite">
+              {error && (
+                <p className="flex items-center gap-2 rounded-xl border border-destructive/25 bg-destructive/10 p-3 text-sm text-destructive">
+                  <AlertCircle size={16} className="shrink-0" />
+                  {error}
+                </p>
+              )}
+              {sent && (
+                <p className="flex items-center gap-2 rounded-xl border border-success/25 bg-success/10 p-3 text-sm text-success">
+                  <CheckCircle2 size={16} className="shrink-0" />
+                  {sent}
+                </p>
+              )}
+            </div>
 
-            <button
-              type="submit"
-              className="
-                mt-1 px-4 py-2.5 text-[13px] font-medium rounded-lg
-                bg-neutral-900 text-white dark:bg-white dark:text-neutral-900
-                hover:opacity-85 active:opacity-75
-                transition-opacity duration-150
-              "
-            >
+            <button type="submit" disabled={loading} className="btn btn-primary h-12 w-full sm:w-auto sm:self-end">
               {loading ? (
                 <>
-                  <div className="flex items-center justify-center gap-2">
-                    <Loader2 size={15} className=" animate-spin" />
-                    <p>Sending Message</p>
-                  </div>
+                  <Loader2 size={16} className="animate-spin" />
+                  Sending...
                 </>
               ) : (
-                "Send Message"
+                <>
+                  <Send size={15} />
+                  Send message
+                </>
               )}
             </button>
           </form>
-
-          <div className="flex flex-col gap-6 text-sm text-neutral-600 dark:text-neutral-400">
-            <p className="leading-relaxed">
-              I build impactful digital experiences and love collaborating with
-              driven people. If you need a web application, a redesign, or
-              technical expertise, feel free to reach out.
-            </p>
-            <div className="flex flex-col gap-2">
-              <p className="text-xs font-medium uppercase tracking-widest text-neutral-500 dark:text-neutral-500">
-                Connect
-              </p>
-              <div className="flex gap-2">
-                {[
-                  {
-                    label: "Email",
-                    href: "mailto:vcode.dev18@gmail.com",
-                    icon: <MdOutlineEmail size={18} />,
-                  },
-                  {
-                    label: "GitHub",
-                    href: "https://github.com/Vaibhu18",
-                    external: true,
-                    icon: <FaGithub size={18} />,
-                  },
-                  {
-                    label: "LinkedIn",
-                    href: "https://www.linkedin.com/in/vaibhu18",
-                    external: true,
-                    icon: <FaLinkedin size={18} />,
-                  },
-                ].map(({ label, href, external, icon }) => (
-                  <Link
-                    key={label}
-                    href={href}
-                    target={external ? "_blank" : undefined}
-                    rel={external ? "noopener noreferrer" : undefined}
-                    className="text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors duration-150 flex items-center px-3 py-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800"
-                  >
-                    <span className="mr-1">{icon}</span>
-                    {label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className="pt-5 border-t border-neutral-200 dark:border-neutral-800">
-              <p className="text-xs font-medium text-neutral-500 dark:text-neutral-500 uppercase tracking-widest mb-1.5">
-                Prefer direct contact?
-              </p>
-              <p className="leading-relaxed">
-                Email me at{" "}
-                <Link
-                  href="mailto:vcode.dev18@gmail.com"
-                  className="font-medium text-neutral-800 dark:text-neutral-200 hover:underline underline-offset-2"
-                >
-                  vcode.dev18@gmail.com
-                </Link>{" "}
-                — I respond within 24 hours.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
