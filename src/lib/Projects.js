@@ -2,6 +2,111 @@ export const PROJECTS = [
   {
     id: 1,
 
+    title: "Axentra ERP – Scrap Recycling & Manufacturing Management",
+
+    tagline:
+      "A full-stack ERP built for a scrap-recycling and manufacturing unit. It replaces paper registers and spreadsheets for production, stock, billing, party accounts, cash book, wages and expenses, with every bill, payment and stock change committed together as one transaction.",
+
+    features: [
+      "Customer and supplier ledger with FIFO bill-wise settlement: payments automatically clear the oldest open bills, and settled entries are locked from editing",
+      "Sale and purchase billing for quantity- and weight-based products, with sequential bill numbers (SESB001, SEPB001) issued by an atomic counter",
+      "Purchase bills and expenses support Normal and GST billing with CGST/SGST, plus 13 expense categories",
+      "Each bill, its stock movement, cash entry and ledger posting commit in one MongoDB transaction, so a failure leaves nothing half-written",
+      "Daily production log by shift (Day/Night) feeding a stock ledger, with out-of-stock and low-stock tracking",
+      "Scrap cleaning module: cleaning teams with member lists, weight × rate batch entries, and payments tracked against what each team is owed",
+      "Attendance (full day, half day, absent) feeding per-day wage payroll, with advances and pending-salary tracking",
+      "Account overview, receivables, payables and cash-book transaction pages, with Excel export on the main data tables",
+      "Printable PDF invoices generated in the browser, plus a dashboard with KPIs, trends, receivable ageing and alerts for stock, overdue bills and cash mismatches",
+      "Bills and payments can only be edited or deleted by their creator within 2 days. Google sign-in and email login use httpOnly-cookie JWTs with refresh-token rotation",
+    ],
+
+    highlightTechs: [
+      "React 19",
+      "Node.js & Express 5",
+      "MongoDB (Mongoose, Transactions)",
+      "Tailwind CSS v4",
+      "AG Grid",
+      "Recharts",
+      "Zod",
+    ],
+
+    status: "Completed",
+
+    link: "https://vcode-erp.vercel.app/",
+
+    github: "https://github.com/Vaibhu18/ERP",
+
+    techs: [
+      "⚛️ React 19",
+      "⚡ Vite",
+      "🟢 Node.js & Express 5",
+      "🍃 MongoDB & Mongoose",
+      "🎨 Tailwind CSS v4 & shadcn/ui",
+      "📊 Recharts",
+      "🧾 AG Grid & ExcelJS",
+      "📄 React-PDF",
+      "🔐 JWT, Passport & Google OAuth",
+      "✅ Zod",
+    ],
+
+    date: "📅 October 2026",
+  },
+
+  {
+    id: 2,
+
+    title: "Pahadi Keeda – Trekking Website & Custom CMS",
+
+    tagline:
+      "A database-driven trekking website with a built-in admin panel. Treks, destinations, per-trek cost breakdowns, blog posts, navigation and page layouts are all managed from /admin, and changes go live as soon as they are saved.",
+
+    features: [
+      "Trek and destination catalog with category, difficulty, duration and price filters, sorting, site-wide search, day-wise itineraries, departure dates with seat counts, a things-to-carry list, trek FAQs and photo galleries",
+      "Per-trek expenditure breakdown: cost items grouped by category, per-person and shared per-group costs split across the group size, and optional add-ons kept out of the total",
+      "Section-based page builder with 17 section types (hero, featured treks, stats, testimonials, FAQs, image + text, gallery, CTA and more). Pages and sections can be created, reordered and hidden without code",
+      "Trip planner dialog that saves the request as an enquiry and opens WhatsApp with the details pre-filled, plus a floating WhatsApp button",
+      "Media library on MongoDB GridFS. Uploads are auto-rotated, stripped of metadata, resized to 2400px and converted to WebP with Sharp. An image still in use cannot be deleted",
+      "Draft and publish workflow with preview, Markdown blog posts, categorized FAQs, a testimonial slider, announcement and promotional banners, and editable header and footer menus",
+      "SEO controls per page (meta tags, share image, canonical URL, noindex), a generated sitemap and robots.txt, and security headers",
+      "Enquiry inbox with status tracking (new, contacted, converted, closed). The public form is protected by a honeypot field and a per-IP rate limit of 5 requests per 10 minutes",
+      "Admin and Editor roles, bcrypt password hashing and signed HTTP-only session cookies (JWT via Jose, 12-hour expiry) checked against the database on every request. Accounts lock for 15 minutes after 5 failed logins, saves are rejected if someone else edited the same item first, and an activity log records admin actions",
+      "Seed and admin-creation scripts and an API integration test suite covering auth, CRUD, pages, enquiries and media",
+    ],
+
+    highlightTechs: [
+      "Next.js 16 (App Router)",
+      "React 19",
+      "MongoDB & Mongoose",
+      "GridFS & Sharp",
+      "Tailwind CSS v4",
+      "Zod & React Hook Form",
+      "Jose (JWT) & bcrypt",
+    ],
+
+    status: "Completed",
+
+    link: "https://pahadikeeda.vercel.app/",
+
+    github: "https://github.com/Vaibhu18/Pahadi-Keeda",
+
+    techs: [
+      "▲ Next.js 16",
+      "⚛️ React 19",
+      "🍃 MongoDB & Mongoose",
+      "📁 GridFS & Sharp",
+      "🎨 Tailwind CSS v4",
+      "🛡️ Jose (JWT) & bcrypt",
+      "✅ Zod Validation",
+      "📋 React Hook Form",
+      "💬 WhatsApp Click-to-Chat",
+    ],
+
+    date: "📅 September 2026",
+  },
+
+  {
+    id: 3,
+
     title: "HireLink – Video Calling Interview Platform",
 
     tagline:
@@ -51,52 +156,7 @@ export const PROJECTS = [
   },
 
   {
-    id: 2,
-
-    title: "Astro Straits – AI Astrology Chat App",
-
-    tagline:
-      "An AI-powered astrology assistant delivering personalized predictions, chart insights, and real-time guidance through natural conversations. Built with a scalable fullstack architecture for a seamless user experience.",
-
-    features: [
-      "AI-powered astrology platform featuring 'Astro' – your intelligent AI astrologer",
-      "Real-time astrological guidance, predictions, and chart-based insights powered by Gemini AI",
-      "Fullstack Next.js architecture with unified frontend and backend",
-      "Secure authentication and user management using NextAuth.js",
-      "Persistent user data and chat history stored in MongoDB with Mongoose",
-      "Beautiful, responsive, and accessible UI built with Next.js, Tailwind, and shadcn/ui components",
-      "Gemini API integration enabling natural, context-aware astrological conversations",
-      "Deployed on Vercel with fast, scalable, and globally optimized performance",
-    ],
-
-    highlightTechs: [
-      "Next.js (Fullstack)",
-      "NextAuth.js",
-      "MongoDB",
-      "Gemini AI API",
-      "Tailwind + shadcn/ui",
-    ],
-
-    status: "Completed",
-
-    link: "https://astrostraits-ai.vercel.app/",
-
-    github: "https://github.com/Vaibhu18/Astro-Straits",
-
-    techs: [
-      "⚛️ Next.js (Fullstack)",
-      "🛡️ NextAuth.js",
-      "🟢 MongoDB + Mongoose",
-      "🎨 shadcn/ui + TailwindCSS",
-      "🤖 Gemini AI API",
-      "☁️ Vercel Deployment",
-    ],
-
-    date: "📅 November 10, 2025",
-  },
-
-  {
-    id: 3,
+    id: 4,
 
     title: "Veltrix AI Messenger – Real-Time Chat with Gemini AI",
 
@@ -146,20 +206,20 @@ export const PROJECTS = [
   },
 
   {
-    id: 4,
-    title: "Nexora.ai – Intelligent Multi-Model AI Workspace",
+    id: 5,
+    title: "Nexora.ai – Multi-Model AI Chat Workspace",
     tagline:
-      "A full-stack, enterprise-grade conversational AI workspace featuring zero-knowledge BYOK encryption, real-time multi-model streaming, cryptographic chat locking, and multimodal document analysis.",
+      "A bring-your-own-key chat app for Gemini, OpenAI and Claude, with streaming responses, password-locked chats and image/PDF attachments.",
 
     features: [
-      "Multi-Model BYOK (Bring Your Own Key) architecture supporting Google Gemini, Anthropic Claude, and OpenAI",
-      "Zero-knowledge AES-256-GCM authenticated encryption for secure client API key storage at rest",
-      "Real-time token-by-token streaming inference with KaTeX LaTeX math rendering and syntax-highlighted code blocks",
-      "Private chat locking protected by master passwords and 30-minute HMAC-SHA256 session tokens with timing-safe checks",
-      "Multimodal document & image analysis with support for PDFs, PNGs, and JPEGs via drag-and-drop & clipboard paste",
-      "Secure dual authentication with NextAuth.js (Credentials & Google OAuth), 6-digit segmented OTP verification, and magic links",
-      "Full conversation lifecycle management: pinned threads, real-time full-text search, thread renaming, and deletion",
-      "Modern glassmorphic UI built with Tailwind CSS v4, custom OKLCH design tokens, and next-themes synchronization",
+      "Bring-your-own-key chat across Gemini, OpenAI and Claude. Keys are added in Settings or at sign-up, and each request goes through one provider layer (Gemini runs gemini-3.5-flash-lite, with fallback to gemini-2.0-flash)",
+      "API keys are encrypted at rest with AES-256-GCM (random IV and auth tag per key), hidden from queries by default, and decrypted in memory only when a request needs them",
+      "Responses stream token by token as newline-delimited JSON. If the client disconnects mid-answer, the partial reply is saved. Markdown output supports GFM tables, KaTeX math and highlighted code blocks with a copy button",
+      "Per-chat locking with a bcrypt-hashed lock password. Unlocking issues a 30-minute HMAC-SHA256 token checked with timingSafeEqual. Locked chats show a masked title and are excluded from search and the image gallery",
+      "Attach PNG, JPEG, WebP or PDF files (up to 4 files / 4 MB per message) by picker, drag-and-drop or clipboard paste. File type is checked from magic bytes, not the browser's MIME type. Gemini analyses the files, and earlier attachments are re-sent so follow-up questions still work",
+      "Sign in with email and password or Google OAuth through NextAuth.js. Email sign-ups are verified with a hashed 6-digit OTP or a magic link (10-minute expiry, resend cooldown), and inputs are validated with Zod",
+      "Chat management: pin chats (limit configurable up to 10), rename, delete, search across titles and message text, AI-generated titles, and a gallery of uploaded images",
+      "Responsive UI on Tailwind CSS v4 with shadcn/Radix components, OKLCH colour tokens and light/dark/system themes via next-themes",
     ],
 
     highlightTechs: [
@@ -168,8 +228,9 @@ export const PROJECTS = [
       "Tailwind CSS v4",
       "MongoDB & Mongoose",
       "NextAuth.js",
-      "AES-256-GCM Crypto",
+      "AES-256-GCM",
       "Google GenAI SDK",
+      "Zod",
     ],
 
     status: "Completed",
@@ -183,15 +244,16 @@ export const PROJECTS = [
       "🛡️ NextAuth.js",
       "🟢 MongoDB",
       "🔐 AES-256-GCM",
-      "🤖 Gemini & Multi-LLM",
+      "🤖 Gemini, OpenAI & Claude",
       "📐 KaTeX & Markdown",
+      "📧 Nodemailer",
     ],
 
-    date: "📅 September 19, 2025",
+    date: "📅 July 17, 2026",
   },
 
   {
-    id: 5,
+    id: 6,
 
     title: "Mindful – AI Health Coach",
 
@@ -221,7 +283,7 @@ export const PROJECTS = [
   },
 
   {
-    id: 6,
+    id: 7,
 
     title: "GenPro – AI Productivity Assistant",
 
