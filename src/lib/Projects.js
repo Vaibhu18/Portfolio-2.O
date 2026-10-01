@@ -147,43 +147,44 @@ export const PROJECTS = [
 
   {
     id: 4,
-
-    title: "Nexora.AI – Intelligent Search Engine",
-
+    title: "Nexora.ai – Intelligent Multi-Model AI Workspace",
     tagline:
-      "An AI-powered conversational search engine delivering precise, real-time answers with context-aware multi-turn understanding. Combines LLM intelligence with live web data for a smarter search experience.",
+      "A full-stack, enterprise-grade conversational AI workspace featuring zero-knowledge BYOK encryption, real-time multi-model streaming, cryptographic chat locking, and multimodal document analysis.",
 
     features: [
-      "AI-powered conversational search delivering precise, real-time answers",
-      "Advanced context retention for multi-turn query understanding and follow-up responses",
-      "Secure authentication and user management powered by NextAuth.js with Google OAuth",
-      "Persistent user sessions and search history using MongoDB and Mongoose",
-      "Sleek, responsive, and accessible UI crafted with Next.js, Tailwind, and shadcn/ui components",
-      "Gemini API integration enabling intelligent, human-like conversational experiences",
-      "Brave Search integration for enhanced contextual data retrieval",
+      "Multi-Model BYOK (Bring Your Own Key) architecture supporting Google Gemini, Anthropic Claude, and OpenAI",
+      "Zero-knowledge AES-256-GCM authenticated encryption for secure client API key storage at rest",
+      "Real-time token-by-token streaming inference with KaTeX LaTeX math rendering and syntax-highlighted code blocks",
+      "Private chat locking protected by master passwords and 30-minute HMAC-SHA256 session tokens with timing-safe checks",
+      "Multimodal document & image analysis with support for PDFs, PNGs, and JPEGs via drag-and-drop & clipboard paste",
+      "Secure dual authentication with NextAuth.js (Credentials & Google OAuth), 6-digit segmented OTP verification, and magic links",
+      "Full conversation lifecycle management: pinned threads, real-time full-text search, thread renaming, and deletion",
+      "Modern glassmorphic UI built with Tailwind CSS v4, custom OKLCH design tokens, and next-themes synchronization",
     ],
 
     highlightTechs: [
-      "Next.js",
-      "Auth.js",
-      "MongoDB",
-      "Gemini API",
-      "Brave Search API",
+      "Next.js 16 (App Router)",
+      "React 19",
+      "Tailwind CSS v4",
+      "MongoDB & Mongoose",
+      "NextAuth.js",
+      "AES-256-GCM Crypto",
+      "Google GenAI SDK",
     ],
 
     status: "Completed",
-
-    link: "https://ai-nexora.vercel.app/",
-
-    github: "https://github.com/Vaibhu18/nexora.ai",
+    link: "https://vcode-nexora.vercel.app/",
+    github: "https://github.com/Vaibhu18/nexora.ai-2.0",
 
     techs: [
-      "⚛️ Next.js",
-      "🛡️ Auth.js",
+      "⚛️ Next.js 16",
+      "⚡ React 19",
+      "🎨 Tailwind CSS v4",
+      "🛡️ NextAuth.js",
       "🟢 MongoDB",
-      "🎨 shadcn/ui",
-      "🤖 Gemini API",
-      "🔍 Brave Search",
+      "🔐 AES-256-GCM",
+      "🤖 Gemini & Multi-LLM",
+      "📐 KaTeX & Markdown",
     ],
 
     date: "📅 September 19, 2025",
