@@ -2,6 +2,59 @@ export const PROJECTS = [
   {
     id: 1,
 
+    title: "Vistara AI – Real Estate Lead CRM & Multilingual Voice Platform",
+
+    tagline:
+      "An AI-powered real estate lead management CRM and conversational voice platform that conducts natural spoken phone-like dialogues in Marathi, Hindi, and English over WebSockets. It grounds conversations strictly in verified RERA project data, automatically transcribes and evaluates buyer intent with Google Gemini, and delivers structured sales recaps with explainable lead scores.",
+
+    features: [
+      "Full-duplex real-time voice conversations streamed over WebSockets directly to Google Gemini Live API (gemini-3.8-live & flash-live-preview) with automatic Voice Activity Detection (VAD) and instant interruption (barge-in)",
+      "Dual call modes: instant inbound conversations ('Talk to AI') and simulated outbound callbacks ('Get a call from AI') with browser ringtones and Accept/Decline actions that cleanly mark MISSED/DECLINED states without invoking Gemini",
+      "Fluent multilingual and code-switching comprehension: naturally understands spoken Marathi, Hindi, English, and regional Marathi-English mixed speech ('2 BHK कितीला आहे?', 'Parking उपलब्ध आहे का?')",
+      "Zero-hallucination verified property context: AI system prompts strictly restrict answers to verified database specs (carpet area, pricing, amenities, possession); never invents discounts or promises and politely states when information is unavailable",
+      "Automated post-call sales analysis: upon call termination, Gemini parses transcripts into structured JSON extracting preferred configurations, stated budget, buying timeline, site visit interest, and unresolved questions",
+      "Explainable 0–100 lead intent scoring: categorizes leads into HOT, WARM, or COLD temperatures with transparent factor breakdowns (+20 specific unit interest, +15 verified budget fit, +20 site visit requested)",
+      "Multi-key & multi-model failover pooling: backend geminiPool randomly rotates API keys and models per call, automatically cooling down rate-limited or quota-exhausted keys so live traffic never gets blocked",
+      "Resilient call state & auto-save lifecycle: abrupt tab closures, disconnections, or hang-ups gracefully trigger database state transitions, persist timestamped message transcripts, calculate duration, and invoke post-call analysis",
+      "Enterprise lead CRM with Role-Based Access Control (Admin & Employee): lead pipeline tracking by status (NEW, CONTACTED, SITE_VISIT, CONVERTED, LOST), employee assignment, conversation audio-to-text drawer, and builder inventory requests",
+      "Daily visitor courtesy quota & server rate guards: tracks a 3-call daily limit in the browser (resetting at midnight) with persistent UI indicators, backed by server-side per-phone daily caps and IP rate-limiting",
+    ],
+
+    highlightTechs: [
+      "React 19",
+      "Node.js & Express",
+      "Google Gemini Live (Multimodal Audio)",
+      "WebSockets (ws)",
+      "MongoDB & Mongoose",
+      "Tailwind CSS v4",
+      "Zod",
+    ],
+
+    status: "Completed",
+
+    link: "https://vcode-vistara.vercel.app/",
+
+    github: "https://github.com/Vaibhu18/vistara-ai",
+
+    techs: [
+      "⚛️ React 19",
+      "⚡ Vite",
+      "🟢 Node.js & Express",
+      "🍃 MongoDB & Mongoose",
+      "🎙️ WebSockets (Live Audio Stream)",
+      "🤖 Google Gemini Live (Multimodal API)",
+      "🎨 Tailwind CSS v4 & Radix UI",
+      "🔐 JWT & HttpOnly Cookie Auth",
+      "🌐 Multilingual Voice (Marathi, Hindi, English)",
+      "✅ Zod",
+    ],
+
+    date: "📅 October 2026",
+  },
+
+  {
+    id: 2,
+
     title: "Axentra ERP – Scrap Recycling & Manufacturing Management",
 
     tagline:
@@ -53,7 +106,7 @@ export const PROJECTS = [
   },
 
   {
-    id: 2,
+    id: 3,
 
     title: "Pahadi Keeda – Trekking Website & Custom CMS",
 
@@ -105,7 +158,7 @@ export const PROJECTS = [
   },
 
   {
-    id: 3,
+    id: 4,
 
     title: "HireLink – Video Calling Interview Platform",
 
@@ -156,7 +209,7 @@ export const PROJECTS = [
   },
 
   {
-    id: 4,
+    id: 5,
 
     title: "Veltrix AI Messenger – Real-Time Chat with Gemini AI",
 
@@ -206,7 +259,7 @@ export const PROJECTS = [
   },
 
   {
-    id: 5,
+    id: 6,
     title: "Nexora.ai – Multi-Model AI Chat Workspace",
     tagline:
       "A bring-your-own-key chat app for Gemini, OpenAI and Claude, with streaming responses, password-locked chats and image/PDF attachments.",
@@ -253,7 +306,7 @@ export const PROJECTS = [
   },
 
   {
-    id: 6,
+    id: 7,
 
     title: "Mindful – AI Health Coach",
 
@@ -283,7 +336,7 @@ export const PROJECTS = [
   },
 
   {
-    id: 7,
+    id: 8,
 
     title: "GenPro – AI Productivity Assistant",
 

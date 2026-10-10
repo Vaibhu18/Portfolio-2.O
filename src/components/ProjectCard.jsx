@@ -59,16 +59,23 @@ const ProjectCard = ({ project }) => {
         <div className="flex flex-1 flex-col gap-4 p-6">
           <div className="flex items-center justify-between gap-3 text-xs text-muted-foreground">
             <span className="font-mono">{stripEmoji(project.date)}</span>
-            <span className="chip border-success/30 bg-success/10 py-0.5 text-success">{project.status}</span>
+            <span className="chip border-success/30 bg-success/10 py-0.5 text-success">
+              {project.status}
+            </span>
           </div>
 
           <div className="flex flex-col gap-2">
             <h3 className="text-lg font-semibold tracking-tight">
-              <Link href={`/projects/${project.id}`} className="transition-colors hover:text-brand-ink">
+              <Link
+                href={`/projects/${project.id}`}
+                className="transition-colors hover:text-brand-ink"
+              >
                 {project.title}
               </Link>
             </h3>
-            <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground">{project.tagline}</p>
+            <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+              {project.tagline}
+            </p>
           </div>
 
           <ul className="flex flex-wrap gap-1.5">
@@ -80,7 +87,10 @@ const ProjectCard = ({ project }) => {
           </ul>
 
           <div className="mt-auto flex items-center gap-2 border-t border-border pt-4">
-            <Link href={`/projects/${project.id}`} className="btn btn-primary btn-sm group/btn">
+            <Link
+              href={`/projects/${project.id}`}
+              className="btn btn-primary btn-sm group/btn"
+            >
               Case study
               <ArrowUpRight
                 size={14}
@@ -108,7 +118,12 @@ const ProjectCard = ({ project }) => {
         </div>
       </article>
 
-      <Modal open={showPreview} onClose={closePreview} label={`${project.title} preview`} className="h-[85dvh] max-w-6xl">
+      <Modal
+        open={showPreview}
+        onClose={closePreview}
+        label={`${project.title} preview`}
+        className="h-[85dvh] max-w-6xl"
+      >
         <BrowserBar url={project.link}>
           <a
             href={project.link}
@@ -128,7 +143,11 @@ const ProjectCard = ({ project }) => {
             <X size={16} />
           </button>
         </BrowserBar>
-        <iframe src={project.link} title={project.title} className="h-full w-full flex-1 border-0 bg-white" />
+        <iframe
+          src={project.link}
+          title={project.title}
+          className="h-full w-full flex-1 border-0 bg-white"
+        />
       </Modal>
     </>
   );
