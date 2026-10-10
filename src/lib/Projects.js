@@ -338,41 +338,46 @@ export const PROJECTS = [
   {
     id: 8,
 
-    title: "GenPro – AI Productivity Assistant",
+    title: "Ilyantra – AI App Builder",
 
     tagline:
-      "An AI-powered code generation platform that transforms user prompts into complete React applications with live preview and editable environments. Built to streamline development and accelerate prototyping.",
+      "An AI app builder that turns plain-English prompts into complete React applications, streamed live from Gemini. Run them in the browser, refine them by chatting, then export a runnable Vite project or share a live read-only link.",
 
     features: [
-      "Generates complete React applications from natural language prompts",
-      "Interactive live preview and code editing environment using Sandpack",
-      "Fullstack architecture combining MERN stack with Next.js",
-      "Seamless authentication and user sessions powered by Auth.js",
-      "AI-driven code generation using Gemini API",
-      "Persistent project storage and retrieval for generated applications",
+      "Streams a complete React app from a natural-language prompt, file by file in real time",
+      "Live in-browser preview with an editable code editor and file explorer using Sandpack",
+      "Refine apps by chatting: follow-ups return small search/replace patches that are merged server-side",
+      "One-click export to a standalone Vite + React + Tailwind project (ZIP)",
+      "Public read-only share links that can be switched back to private anytime",
+      "Google sign-in and instant guest login via NextAuth, with per-user rate limiting",
+      "Multiple Gemini models with multi-key failover when API quota runs out",
+      "Persistent project, chat and file storage in MongoDB",
     ],
 
     highlightTechs: [
-      "Next.js",
-      "MERN Stack",
+      "Next.js 16",
       "Gemini API",
       "Sandpack",
-      "Auth.js",
+      "MongoDB",
+      "NextAuth",
     ],
 
     status: "Completed",
 
-    link: "https://vcode-genpro.vercel.app/",
+    link: "https://vcode-ilyantra.vercel.app/",
 
-    github: "https://github.com/Vaibhu18/ThinkAI",
+    github: "https://github.com/Vaibhu18/Ilyantra",
 
     techs: [
-      "⚛️ MERN with Next.js 15",
-      "🧩 SandPack",
-      "🔐 Auth.js",
+      "⚛️ Next.js 16 + React 19",
+      "🧩 Sandpack",
+      "🔐 NextAuth",
       "🤖 Gemini API",
+      "🍃 MongoDB",
+      "🎨 Tailwind CSS 4",
     ],
 
     date: "📅 May 22, 2025",
   },
+
 ];
