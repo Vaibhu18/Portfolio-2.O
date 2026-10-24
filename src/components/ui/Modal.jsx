@@ -28,7 +28,7 @@ export default function Modal({ open, onClose, label, className = "", children }
         aria-modal="true"
         aria-label={label}
         onClick={(e) => e.stopPropagation()}
-        className={`animate-chat-window-in relative flex w-full flex-col overflow-hidden rounded-3xl border border-border bg-surface shadow-pop ${className}`}
+        className={`frosted animate-chat-window-in relative flex w-full flex-col overflow-hidden rounded-3xl border border-border bg-surface shadow-pop ${className}`}
       >
         {children}
       </div>

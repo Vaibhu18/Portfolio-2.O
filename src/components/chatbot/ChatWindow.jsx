@@ -73,7 +73,7 @@ export default function ChatWindow({
       role="dialog"
       aria-label="VCode Portfolio AI Assistant"
       aria-modal="false"
-      className="animate-chat-window-in fixed inset-x-3 bottom-3 z-50 flex h-[min(85dvh,620px)] flex-col overflow-hidden rounded-3xl border border-border bg-surface shadow-pop sm:inset-x-auto sm:right-6 sm:bottom-6 sm:w-100"
+      className="frosted animate-chat-window-in fixed inset-x-3 bottom-3 z-50 flex h-[min(85dvh,620px)] flex-col overflow-hidden rounded-3xl border border-border bg-surface shadow-pop sm:inset-x-auto sm:right-6 sm:bottom-6 sm:w-100"
     >
       <ChatHeader
         activeTab={activeTab}

@@ -41,7 +41,7 @@ export default function ChatLauncher({
           role="button"
           tabIndex={0}
           onKeyDown={(e) => e.key === "Enter" && onToggle()}
-          className="animate-greeting-bubble group relative max-w-70 cursor-pointer rounded-2xl rounded-br-md border border-border bg-surface p-4 pr-9 shadow-pop select-none"
+          className="frosted animate-greeting-bubble group relative max-w-70 cursor-pointer rounded-2xl rounded-br-md border border-border bg-surface p-4 pr-9 shadow-pop select-none"
         >
           <button
             type="button"

@@ -142,7 +142,7 @@ export default function HeroSection() {
         </div>
 
         {/* Stats */}
-        <dl className="animate-rise delay-5 mt-16 grid grid-cols-2 overflow-hidden rounded-2xl border border-border bg-border gap-px md:mt-20 md:grid-cols-4">
+        <dl className="frosted animate-rise delay-5 mt-16 grid grid-cols-2 overflow-hidden rounded-2xl border border-border bg-border gap-px md:mt-20 md:grid-cols-4">
           {STATS.map((stat) => (
             <div key={stat.label} className="flex flex-col gap-1 bg-surface p-5 sm:p-6">
               <dt className="order-2 text-xs text-muted-foreground sm:text-sm">{stat.label}</dt>
