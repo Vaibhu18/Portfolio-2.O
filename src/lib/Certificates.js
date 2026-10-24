@@ -1,5 +1,17 @@
 export const CERTIFICATES = [
   {
+    title: "Software Development Internship – Completion Certificate",
+    issuer: "Prix Corporation, Baramati",
+    date: "Sep 17, 2026",
+    description:
+      "Successfully completed a software development internship (1 Mar 2026 – 16 Sep 2026) in the Software Development Department. Built enterprise HR and Payroll modules with C#, .NET 8, ASP.NET Core, and SQL Server, and was recognised for outstanding commitment, professionalism, and performance.",
+    image: "/Certificates/prixInternship.png",
+    imagePosition: "top", // portrait scan — keep the letterhead visible in the card crop
+    type: "Internship",
+    authorizedBy: "Prix Corporation",
+    refNo: "Int/prix7",
+  },
+  {
     title: "Backend Development Certification",
     issuer: "FunctionUp",
     date: "Oct 16, 2022",

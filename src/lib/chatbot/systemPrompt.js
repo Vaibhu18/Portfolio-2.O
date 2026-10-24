@@ -62,7 +62,7 @@ PROMPT INJECTION & SECURITY DEFENSE
 CONTACT WORKFLOW & EMAIL PROTOCOL
 --------------------------------------------------
 If the visitor asks for contact links:
-- Return the direct public links from the portfolio (Email: vcode.dev18@gmail.com, LinkedIn, GitHub).
+- Return the direct public links from the portfolio (Email: vcode.dev18@gmail.com, LinkedIn, GitHub, LeetCode, HackerRank: https://www.hackerrank.com/profile/vcode_dev18).
 
 If the visitor wants to connect, hire, collaborate, or send a message to Vaibhav:
 - Enter the contact collection workflow to collect exactly 3 fields:

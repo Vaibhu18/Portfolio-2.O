@@ -25,11 +25,11 @@ const ACHIEVEMENTS = [
 ];
 
 const RESPONSIBILITIES = [
-  "Develop and maintain enterprise web applications using C# and .NET.",
-  "Build robust and scalable REST APIs with ASP.NET Core.",
-  "Design and integrate responsive user interfaces using TypeScript and Bootstrap.",
-  "Work extensively with Entity Framework Core and SQL Server for data management.",
-  "Participate in code reviews, sprint planning, and collaborate closely with QA, BAs, and senior developers.",
+  "Developed and maintained enterprise web applications using C# and .NET.",
+  "Built robust and scalable REST APIs with ASP.NET Core.",
+  "Designed and integrated responsive user interfaces using TypeScript and Bootstrap.",
+  "Worked extensively with Entity Framework Core and SQL Server for data management.",
+  "Participated in code reviews and sprint planning, collaborating closely with QA, BAs, and senior developers.",
 ];
 
 const Experience = () => {
@@ -58,9 +58,11 @@ const Experience = () => {
               </div>
               <div className="flex min-w-0 flex-col gap-1">
                 <div className="flex flex-wrap items-center gap-2">
-                  <h3 className="text-xl font-semibold tracking-tight sm:text-2xl">Software Developer</h3>
-                  <span className="chip border-success/30 bg-success/10 text-success">
-                    <span className="size-1.5 rounded-full bg-success" /> Current
+                  <h3 className="text-xl font-semibold tracking-tight sm:text-2xl">
+                    Software Development Intern
+                  </h3>
+                  <span className="chip">
+                    <Check size={12} strokeWidth={3} /> Completed
                   </span>
                 </div>
                 <p className="font-medium text-brand-ink">Prix Corporation</p>
@@ -69,13 +71,13 @@ const Experience = () => {
 
             <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground md:flex-col md:items-end md:gap-1.5">
               <li className="flex items-center gap-2">
-                <CalendarDays size={15} /> April 2026 – Present
+                <CalendarDays size={15} /> Mar 2026 – Sep 2026
               </li>
               <li className="flex items-center gap-2">
                 <MapPin size={15} /> Baramati, Maharashtra, India
               </li>
               <li className="flex items-center gap-2">
-                <Briefcase size={15} /> Full-time
+                <Briefcase size={15} /> Internship
               </li>
             </ul>
           </header>

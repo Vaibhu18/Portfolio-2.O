@@ -11,7 +11,8 @@ import { SITE, SOCIALS } from "@/lib/site";
 const CHANNELS = [
   { id: "email", label: "Email", href: `mailto:${SITE.email}`, handle: SITE.email },
   { id: "phone", label: "Phone", href: `tel:${SITE.phone.replace(/\s/g, "")}`, handle: SITE.phone },
-  ...SOCIALS.filter((s) => s.id !== "leetcode"),
+  // Coding profiles aren't ways to reach out, so they stay in the Hero and Footer only.
+  ...SOCIALS.filter((s) => !["leetcode", "hackerrank"].includes(s.id)),
 ];
 
 const GetInTouch = () => {
@@ -76,7 +77,7 @@ const GetInTouch = () => {
     <section id="contact" className="section">
       <div className="container-page">
         <SectionHeading
-          index="08"
+          index="09"
           label="Contact"
           title={
             <>

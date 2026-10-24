@@ -1,14 +1,16 @@
+import { DEFAULT_RESUME } from "./Resumes";
+
 export const SITE = {
   name: "Vaibhav Shinde",
   fullName: "Vaibhav Nagnath Shinde",
   handle: "vcode",
   role: "Full Stack Developer",
-  company: "Prix Corporation",
   location: "Baramati, Maharashtra, IN",
   email: "vcode.dev18@gmail.com",
   phone: "+91 8605112318",
   url: "https://itsvcode.vercel.app",
-  resume: "/vaibhav.pdf",
+  resume: DEFAULT_RESUME.file,
+  resumeDownloadName: DEFAULT_RESUME.downloadName,
   vcard: "/vaibhav-shinde.vcf",
   logo: "/brand/mark.png",
 };
@@ -17,6 +19,12 @@ export const SOCIALS = [
   { id: "github", label: "GitHub", href: "https://github.com/Vaibhu18", handle: "github.com/Vaibhu18" },
   { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/vaibhu18", handle: "linkedin.com/in/vaibhu18" },
   { id: "leetcode", label: "LeetCode", href: "https://leetcode.com/vaibhu18/", handle: "leetcode.com/vaibhu18" },
+  {
+    id: "hackerrank",
+    label: "HackerRank",
+    href: "https://www.hackerrank.com/profile/vcode_dev18",
+    handle: "hackerrank.com/profile/vcode_dev18",
+  },
 ];
 
 // Section anchors live on the home page; prefixing with "/" keeps them working from sub-pages.

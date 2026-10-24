@@ -55,7 +55,7 @@ export const SUGGESTED_QUESTIONS = [
 const KNOWLEDGE_RESPONSES = {
   about: `**Vaibhav Shinde (vcode)** is a passionate **Full-Stack Developer** based in Baramati, Maharashtra, India.
 
-He currently works as a **Software Developer at Prix Corporation**, building scalable enterprise systems and modern web applications. He specializes in designing end-to-end architectures, robust REST APIs, high-performance databases, and intuitive, interactive user experiences.`,
+He recently completed a **Software Development Internship at Prix Corporation** (Mar – Sep 2026), building enterprise HR and Payroll systems, and is now open to full-time roles. He specializes in designing end-to-end architectures, robust REST APIs, high-performance databases, and intuitive, interactive user experiences.`,
 
   skills: `Vaibhav has a diverse full-stack technical ecosystem:
 
@@ -76,13 +76,15 @@ He currently works as a **Software Developer at Prix Corporation**, building sca
 
 Check out the **Projects** section on the site for live demos and GitHub repositories!`,
 
-  experience: `Vaibhav is currently working as a **Software Developer at Prix Corporation** (April 2026 – Present):
+  experience: `Vaibhav completed a **Software Development Internship at Prix Corporation**, Baramati (1 Mar 2026 – 16 Sep 2026):
 
-• Developing and maintaining enterprise modules for HR and Payroll systems.
-• Architecting robust REST APIs using **C#**, **.NET 8**, and **ASP.NET Core**.
-• Designing responsive user interfaces using **TypeScript** and Bootstrap.
-• Tuning database performance and query efficiency with **SQL Server** and Entity Framework Core.
-• Implementing secure authentication and authorization protocols.`,
+• Developed and maintained enterprise modules for HR and Payroll systems.
+• Built robust REST APIs using **C#**, **.NET 8**, and **ASP.NET Core**.
+• Designed responsive user interfaces using **TypeScript** and Bootstrap.
+• Tuned database performance and query efficiency with **SQL Server** and Entity Framework Core.
+• Implemented secure authentication and authorization protocols.
+
+He is now open to full-time roles.`,
 
   education: `Vaibhav's academic background and training:
 
@@ -95,6 +97,7 @@ Check out the **Projects** section on the site for live demos and GitHub reposit
 • 🥇 **First Rank** – Top Coder Coding Competition (2026 & 2024, Dept of Computer Science)
 • 🥈 **Second Rank** – Techno-Spirit 2026 Programming Skill (National Level)
 • 🥈 **Second Prize** – Power of C Project Presentation (2024)
+• 💼 **Software Development Internship** – Prix Corporation (completed Sep 2026)
 • 📜 **Google Data Analytics Capstone** – Google via Coursera
 • 📜 **Backend Development Certification** – FunctionUp
 • 📜 **Front-End Developer Training** – Skill India / Ascent Softech`,
@@ -105,6 +108,7 @@ Check out the **Projects** section on the site for live demos and GitHub reposit
 • 💼 **LinkedIn**: [linkedin.com/in/vaibhu18](https://www.linkedin.com/in/vaibhu18)
 • 🐙 **GitHub**: [github.com/Vaibhu18](https://github.com/Vaibhu18)
 • ⚡ **LeetCode**: [leetcode.com/vaibhu18](https://leetcode.com/vaibhu18/)
+• 🟢 **HackerRank**: [hackerrank.com/profile/vcode_dev18](https://www.hackerrank.com/profile/vcode_dev18)
 
 You can also use the **Command Center & Contact form** on the homepage to send a direct message!`,
 
@@ -116,7 +120,11 @@ You can also use the **Command Center & Contact form** on the homepage to send a
 
   nexora: `**Nexora.AI** is a conversational AI search engine combining **Gemini API** and **Brave Search** for real-time, context-aware answers with multi-turn understanding.`,
 
-  resume: `You can download Vaibhav's full CV / Resume directly using the **Download CV** button in the Hero section, or request one by emailing him at [vcode.dev18@gmail.com](mailto:vcode.dev18@gmail.com).`,
+  resume: `The **Download CV** button in the Hero section downloads Vaibhav's **Software Developer** resume.
+
+The **Resume** section on the homepage also has two role-focused versions to view or download:
+• **.NET Full Stack Developer** (C#, ASP.NET Core, EF Core, SQL Server)
+• **MERN Stack & Node.js Developer** (Node.js, Express, MongoDB, React, Next.js)`,
 
   opensource: `Vaibhav has contributed to open-source projects including **InteraOne**, improving team UI accessibility with contrast-aware color utilities and enhancing real-time form validation systems.`,
 };
@@ -259,7 +267,7 @@ export function getAssistantResponse(query) {
 
 • **Technical Skills** (React, Next.js, .NET, Node.js, C#, SQL Server)
 • **Featured Projects** (HireLink, Astro Straits, Veltrix, Nexora)
-• **Work Experience** (Software Developer at Prix Corporation)
+• **Work Experience** (Software Development Intern at Prix Corporation)
 • **Education & Certifications** (M.Sc CS, Top Coder 1st Rank)
 • **Contact Information** (Email, LinkedIn, GitHub)
 

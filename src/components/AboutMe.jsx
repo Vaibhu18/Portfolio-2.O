@@ -26,10 +26,10 @@ const HIGHLIGHTS = [
 ];
 
 const FACTS = [
-  { icon: Briefcase, label: "Current role", value: "Software Developer @ Prix Corp" },
+  { icon: Briefcase, label: "Recent experience", value: "Software Development Intern @ Prix Corp" },
   { icon: MapPin, label: "Location", value: SITE.location },
   { icon: Sparkles, label: "Specialization", value: "Full Stack (.NET / MERN / Next)" },
-  { icon: CheckCircle2, label: "Status", value: "Open for collaboration", accent: true },
+  { icon: CheckCircle2, label: "Status", value: "Open to full-time roles & collaboration", accent: true },
 ];
 
 const AboutMe = () => {

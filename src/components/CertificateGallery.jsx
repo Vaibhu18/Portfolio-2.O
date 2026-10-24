@@ -2,22 +2,28 @@
 
 import { useCallback, useState } from "react";
 import Image from "next/image";
-import { Award, BookOpen, ExternalLink, Maximize2, Trophy, X } from "lucide-react";
+import { Award, BookOpen, Briefcase, ExternalLink, Maximize2, Trophy, X } from "lucide-react";
 import { CERTIFICATES } from "@/lib/Certificates";
 import Modal from "./ui/Modal";
 
 const FILTERS = [
   { id: "all", label: "All", icon: Award },
+  { id: "Internship", label: "Internships", icon: Briefcase },
   { id: "Competition", label: "Competitions & Ranks", icon: Trophy },
   { id: "Course", label: "Courses", icon: BookOpen },
 ];
 
+const TYPE_BADGES = {
+  Internship: { icon: Briefcase, label: "Internship" },
+  Competition: { icon: Trophy, label: "Rank / Prize" },
+  Course: { icon: BookOpen, label: "Course" },
+};
+
 function TypeBadge({ type }) {
-  const isCompetition = type === "Competition";
-  const Icon = isCompetition ? Trophy : BookOpen;
+  const { icon: Icon, label } = TYPE_BADGES[type] ?? TYPE_BADGES.Course;
   return (
     <span className="inline-flex items-center gap-1 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-medium text-white backdrop-blur-md">
-      <Icon size={11} /> {isCompetition ? "Rank / Prize" : "Course"}
+      <Icon size={11} /> {label}
     </span>
   );
 }
@@ -80,6 +86,7 @@ export default function CertificateGallery({ limit, clampText = true }) {
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 22rem, (min-width: 640px) 45vw, 90vw"
+                  style={{ objectPosition: cert.imagePosition }}
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                 />
                 <div className="absolute top-3 left-3">

@@ -128,16 +128,13 @@ export default function RootLayout({ children }) {
         name: "Vaibhav Shinde",
         alternateName: "vcode",
         jobTitle: "Full Stack Developer",
-        worksFor: {
-          "@type": "Organization",
-          name: "Prix Corporation",
-        },
         url: "https://itsvcode.vercel.app",
         image: "https://itsvcode.vercel.app/vaibhav.jpeg",
         sameAs: [
           "https://github.com/Vaibhu18",
           "https://www.linkedin.com/in/vaibhu18",
           "https://leetcode.com/vaibhu18/",
+          "https://www.hackerrank.com/profile/vcode_dev18",
         ],
         knowsAbout: [
           "Full Stack Development",

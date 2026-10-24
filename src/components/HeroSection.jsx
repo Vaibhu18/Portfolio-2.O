@@ -50,7 +50,7 @@ export default function HeroSection() {
                 Available
               </span>
               <span className="text-muted-foreground">
-                Software Developer @ <span className="font-medium text-foreground">Prix Corp</span>
+                Open to <span className="font-medium text-foreground">full-time roles</span>
               </span>
             </div>
 
@@ -68,7 +68,7 @@ export default function HeroSection() {
             </p>
 
             <div className="animate-rise delay-3 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-              <a href={SITE.resume} download className="btn btn-primary">
+              <a href={SITE.resume} download={SITE.resumeDownloadName} className="btn btn-primary">
                 <Download size={16} />
                 Download CV
               </a>

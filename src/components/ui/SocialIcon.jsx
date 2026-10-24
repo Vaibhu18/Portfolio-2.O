@@ -1,10 +1,11 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { SiLeetcode } from "react-icons/si";
+import { SiHackerrank, SiLeetcode } from "react-icons/si";
 
 const ICONS = {
   github: FaGithub,
   linkedin: FaLinkedin,
   leetcode: SiLeetcode,
+  hackerrank: SiHackerrank,
 };
 
 export default function SocialIcon({ id, size = 16, className }) {

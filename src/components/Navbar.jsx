@@ -123,7 +123,11 @@ export default function Navbar() {
 
           <div className="flex items-center gap-2">
             <ThemeToggle />
-            <a href={SITE.resume} download className="btn btn-primary btn-sm hidden sm:inline-flex">
+            <a
+              href={SITE.resume}
+              download={SITE.resumeDownloadName}
+              className="btn btn-primary btn-sm hidden sm:inline-flex"
+            >
               Resume
               <ArrowUpRight size={15} />
             </a>
@@ -226,7 +230,12 @@ export default function Navbar() {
                 </div>
 
                 <div className="grid grid-cols-2 gap-2">
-                  <a href={SITE.resume} download onClick={close} className="btn btn-primary btn-sm h-11">
+                  <a
+                    href={SITE.resume}
+                    download={SITE.resumeDownloadName}
+                    onClick={close}
+                    className="btn btn-primary btn-sm h-11"
+                  >
                     <Download size={15} /> Resume
                   </a>
                   <Link href="/#contact" onClick={close} className="btn btn-secondary btn-sm h-11">

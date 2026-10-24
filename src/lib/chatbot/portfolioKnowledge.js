@@ -11,9 +11,9 @@ export const PORTFOLIO_KNOWLEDGE = {
     name: "Vaibhav Shinde",
     alias: "vcode",
     title: "Full Stack Developer",
-    currentCompany: "Prix Corporation",
     location: "Baramati, Maharashtra, India",
-    status: "Software Developer at Prix Corporation (Open for impactful collaboration)",
+    status:
+      "Completed a Software Development Internship at Prix Corporation (Mar–Sep 2026); not currently employed there. Open to full-time roles and impactful collaboration.",
     tagline: "Building clean, scalable web apps with a focus on performance and developer experience.",
   },
 
@@ -43,9 +43,9 @@ export const PORTFOLIO_KNOWLEDGE = {
   experience: [
     {
       company: "Prix Corporation",
-      role: "Software Developer",
-      type: "Full-time",
-      period: "April 2026 – Present",
+      role: "Software Development Intern",
+      type: "Internship (completed)",
+      period: "1 Mar 2026 – 16 Sep 2026",
       location: "Baramati, Maharashtra, India",
       technologies: [
         "C#",
@@ -61,11 +61,11 @@ export const PORTFOLIO_KNOWLEDGE = {
         "AG Grid",
       ],
       responsibilities: [
-        "Develop and maintain enterprise web applications using C# and .NET.",
-        "Build robust and scalable REST APIs with ASP.NET Core.",
-        "Design and integrate responsive user interfaces using TypeScript and Bootstrap.",
-        "Work extensively with Entity Framework Core and SQL Server for data management.",
-        "Participate in code reviews, sprint planning, and collaborate closely with QA, BAs, and senior developers.",
+        "Developed and maintained enterprise web applications using C# and .NET.",
+        "Built robust and scalable REST APIs with ASP.NET Core.",
+        "Designed and integrated responsive user interfaces using TypeScript and Bootstrap.",
+        "Worked extensively with Entity Framework Core and SQL Server for data management.",
+        "Participated in code reviews and sprint planning, collaborating closely with QA, BAs, and senior developers.",
       ],
       achievements: [
         "Developed multiple enterprise modules for HR and Payroll systems, enhancing overall system capabilities.",
@@ -144,6 +144,7 @@ export const PORTFOLIO_KNOWLEDGE = {
     github: "https://github.com/Vaibhu18",
     linkedin: "https://www.linkedin.com/in/vaibhu18",
     leetcode: "https://leetcode.com/vaibhu18/",
+    hackerrank: "https://www.hackerrank.com/profile/vcode_dev18",
     website: "https://itsvcode.vercel.app",
     averageResponseTime: "Within 24 hours",
   },

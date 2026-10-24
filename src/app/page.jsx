@@ -6,6 +6,7 @@ import GetInTouch from "@/components/GetInTouch";
 import HeroSection from "@/components/HeroSection";
 import OpenSource from "@/components/OpenSource";
 import Projects from "@/components/Projects";
+import Resumes from "@/components/Resumes";
 import SkillsAndTech from "@/components/SkillsAndTech";
 import React from "react";
 
@@ -20,6 +21,7 @@ const Page = () => {
       <OpenSource />
       <Education />
       <Certificates />
+      <Resumes />
       <GetInTouch />
     </div>
   );
