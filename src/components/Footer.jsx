@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUp } from "lucide-react";
 import SocialIcon from "./ui/SocialIcon";
 import Logo from "./ui/Logo";
+import VCodeDotMatrix from "./ui/VCodeDotMatrix";
 import { NAV_LINKS, SITE, SOCIALS } from "@/lib/site";
 
 const formatIST = () =>
@@ -80,6 +81,9 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+
+        {/* Big Dotted VCODE Matrix Banner */}
+        <VCodeDotMatrix />
 
         <div className="flex flex-col-reverse gap-4 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</p>
