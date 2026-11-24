@@ -98,6 +98,7 @@ He is now open to full-time roles.`,
 • 🥈 **Second Rank** – Techno-Spirit 2026 Programming Skill (National Level)
 • 🥈 **Second Prize** – Power of C Project Presentation (2024)
 • 💼 **Software Development Internship** – Prix Corporation (completed Sep 2026)
+• 🤖 **AI Tools & Claude Workshop** – be10x (Nov 2026)
 • 📜 **Google Data Analytics Capstone** – Google via Coursera
 • 📜 **Backend Development Certification** – FunctionUp
 • 📜 **Front-End Developer Training** – Skill India / Ascent Softech`,
@@ -120,11 +121,7 @@ You can also use the **Command Center & Contact form** on the homepage to send a
 
   nexora: `**Nexora.AI** is a conversational AI search engine combining **Gemini API** and **Brave Search** for real-time, context-aware answers with multi-turn understanding.`,
 
-  resume: `The **Download CV** button in the Hero section downloads Vaibhav's **Software Developer** resume.
-
-The **Resume** section on the homepage also has two role-focused versions to view or download:
-• **.NET Full Stack Developer** (C#, ASP.NET Core, EF Core, SQL Server)
-• **MERN Stack & Node.js Developer** (Node.js, Express, MongoDB, React, Next.js)`,
+  resume: `You can view or download Vaibhav's **Full Stack Developer** resume directly from the **Resume** section on the homepage or via the **Download CV** button in the Hero section. It covers his full-stack experience with React 19, Next.js 16, Node.js, .NET 10, ASP.NET Core, MongoDB, and MS SQL Server.`,
 
   opensource: `Vaibhav has contributed to open-source projects including **InteraOne**, improving team UI accessibility with contrast-aware color utilities and enhancing real-time form validation systems.`,
 };
