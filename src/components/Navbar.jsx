@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowRight, ArrowUpRight, Award, Briefcase, Download, FolderGit2, Layers, Mail, User } from "lucide-react";
 import ThemeToggle from "./ui/ThemeToggle";
-import DesignStyleMenu from "./ui/DesignStyleMenu";
 import Logo from "./ui/Logo";
 import SocialIcon from "./ui/SocialIcon";
 import { NAV_LINKS, SITE, SOCIALS } from "@/lib/site";
@@ -123,7 +122,6 @@ export default function Navbar() {
           </ul>
 
           <div className="flex items-center gap-2">
-            <DesignStyleMenu />
             <ThemeToggle />
             <a
               href={SITE.resume}
