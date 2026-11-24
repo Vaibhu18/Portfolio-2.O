@@ -12,6 +12,17 @@ export const CERTIFICATES = [
     refNo: "Int/prix7",
   },
   {
+    title: "AI Tools & Claude Workshop",
+    issuer: "be10x",
+    date: "Nov 22, 2026",
+    description:
+      "Completed the AI Tools & Claude Workshop conducted by be10x. Gained practical hands-on proficiency in rapid presentation creation, fast data analysis, and accelerated coding and debugging using modern AI tools and Claude.",
+    image: "/Certificates/be10x.png",
+    type: "Course",
+    authorizedBy: "Aditya Goenka & Aditya Kachave, Co-founders",
+    platform: "be10x",
+  },
+  {
     title: "Backend Development Certification",
     issuer: "FunctionUp",
     date: "Oct 16, 2022",
