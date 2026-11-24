@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Bot, X, ChevronRight } from "lucide-react";
+import Image from "next/image";
+import { X, ChevronRight } from "lucide-react";
+import { SITE } from "@/lib/site";
 
 export default function ChatLauncher({
   isOpen,
@@ -51,7 +53,7 @@ export default function ChatLauncher({
           >
             <X size={13} />
           </button>
-          <p className="text-sm font-medium leading-snug">Hi! I&apos;m VCode, Vaibhav&apos;s AI assistant.</p>
+          <p className="text-sm font-medium leading-snug">Hi! I&apos;m vcode, Vaibhav&apos;s AI assistant.</p>
           <p className="mt-1 flex items-center gap-1 text-xs text-muted-foreground transition-colors group-hover:text-brand-ink">
             Ask me about projects &amp; skills
             <ChevronRight size={12} className="transition-transform group-hover:translate-x-0.5" />
@@ -66,7 +68,14 @@ export default function ChatLauncher({
         aria-label="Open portfolio assistant"
         className="group relative grid size-14 place-items-center rounded-full bg-foreground text-background shadow-pop transition-transform duration-200 hover:scale-105 active:scale-95"
       >
-        <Bot size={24} className="transition-transform duration-300 group-hover:-rotate-6" />
+        <Image
+          src={SITE.logo}
+          alt="vcode"
+          width={34}
+          height={34}
+          priority
+          className="rounded-[28%] object-contain transition-transform duration-300 group-hover:-rotate-6"
+        />
         {!hasOpened && (
           <span className="absolute top-0.5 right-0.5 flex size-3">
             <span className="absolute inline-flex size-full animate-ping rounded-full bg-brand opacity-75" />

@@ -183,7 +183,7 @@ export default function Chatbot() {
 
         const replyContent =
           data.reply ||
-          "I'm VCode, Vaibhav's portfolio assistant. What would you like to know about his work?";
+          "I'm vcode, Vaibhav's portfolio assistant. What would you like to know about his work?";
 
         const assistantMessage = {
           id: `assistant_${Date.now()}`,

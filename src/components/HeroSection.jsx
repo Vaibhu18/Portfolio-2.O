@@ -110,12 +110,12 @@ export default function HeroSection() {
           <div className="animate-rise delay-2 relative mx-auto w-full max-w-sm lg:max-w-none">
             <div className="relative aspect-4/5 overflow-hidden rounded-[2rem] border border-border bg-surface-2 shadow-pop">
               <Image
-                src="/vaibhav.jpeg"
+                src="/profile.png"
                 alt={`Portrait of ${SITE.name}`}
                 fill
                 priority
                 sizes="(min-width: 1024px) 28rem, (min-width: 640px) 24rem, 90vw"
-                className="object-cover object-[50%_30%]"
+                className="object-cover object-top"
               />
               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-black/75 via-black/20 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5 text-white">

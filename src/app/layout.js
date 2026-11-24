@@ -129,7 +129,7 @@ export default function RootLayout({ children }) {
         alternateName: "vcode",
         jobTitle: "Full Stack Developer",
         url: "https://itsvcode.vercel.app",
-        image: "https://itsvcode.vercel.app/vaibhav.jpeg",
+        image: "https://itsvcode.vercel.app/profile.png",
         sameAs: [
           "https://github.com/Vaibhu18",
           "https://www.linkedin.com/in/vaibhu18",

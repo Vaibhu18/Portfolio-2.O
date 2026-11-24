@@ -1,7 +1,9 @@
 "use client";
 
 import React from "react";
-import { Bot, User } from "lucide-react";
+import Image from "next/image";
+import { User } from "lucide-react";
+import { SITE } from "@/lib/site";
 
 /**
  * Format markdown text into React nodes (supports bold, links, bullets, and linebreaks)
@@ -84,8 +86,14 @@ export default function ChatMessageItem({ message }) {
     >
       {/* Assistant Avatar */}
       {isAssistant && (
-        <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-surface-2 text-foreground">
-          <Bot size={14} />
+        <span className="mt-0.5 size-7 shrink-0 overflow-hidden rounded-[28%] ring-1 ring-border">
+          <Image
+            src={SITE.logo}
+            alt="vcode"
+            width={28}
+            height={28}
+            className="size-full object-contain"
+          />
         </span>
       )}
 

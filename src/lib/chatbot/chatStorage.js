@@ -8,7 +8,7 @@ export const INITIAL_WELCOME_MESSAGES = [
   {
     id: "welcome-1",
     role: "assistant",
-    content: "Hi! I'm VCode, Vaibhav's portfolio assistant. 👋",
+    content: "Hi! I'm vcode, Vaibhav's portfolio assistant. 👋",
     timestamp: "Just now",
   },
   {

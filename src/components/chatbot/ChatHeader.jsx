@@ -1,7 +1,9 @@
 "use client";
 
 import React from "react";
-import { Bot, X, Plus, Clock, MessageSquare } from "lucide-react";
+import Image from "next/image";
+import { X, Plus, Clock, MessageSquare } from "lucide-react";
+import { SITE } from "@/lib/site";
 
 const TABS = [
   { id: "current", label: "Chat", icon: MessageSquare },
@@ -19,13 +21,19 @@ export default function ChatHeader({
     <div className="flex shrink-0 flex-col gap-3 border-b border-border px-4 pt-4 pb-3">
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-3">
-          <span className="relative grid size-9 place-items-center rounded-full bg-foreground text-background">
-            <Bot size={17} />
-            <span className="absolute -right-0.5 -bottom-0.5 size-3 rounded-full border-2 border-surface bg-success" />
+          <span className="relative size-9 shrink-0">
+            <Image
+              src={SITE.logo}
+              alt="vcode"
+              width={36}
+              height={36}
+              className="size-9 rounded-[28%] object-contain ring-1 ring-border"
+            />
+            <span className="absolute -right-0.5 -bottom-0.5 size-2.5 rounded-full border-2 border-surface bg-success" />
           </span>
           <div className="flex flex-col">
             <span className="flex items-center gap-1.5 text-sm font-semibold">
-              VCode
+              vcode
               <span className="rounded-full bg-brand-soft px-1.5 py-px text-[10px] font-medium text-brand-ink">
                 Gemini AI
               </span>

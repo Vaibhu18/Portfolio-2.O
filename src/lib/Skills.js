@@ -37,5 +37,8 @@ export const SKILLS = [
 
   // DevOps & Tools
   { name: "Git", image: "/Skills/Git.png", category: "tools" },
-  { name: "AWS", image: "/Skills/AWS.png", category: "tools", plate: true },
+  { name: "VS Code", image: "/Skills/VsCode.png", category: "tools" },
+  { name: "Visual Studio", image: "/Skills/VisualStudio.png", category: "tools" },
+  { name: "Claude Code", image: "/Skills/Claude.png", category: "tools" },
+  { name: "Antigravity", image: "/Skills/Antigravity.png", category: "tools" },
 ];

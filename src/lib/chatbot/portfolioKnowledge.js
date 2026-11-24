@@ -106,7 +106,7 @@ export const PORTFOLIO_KNOWLEDGE = {
     frontend: ["React.js", "Next.js", "Tailwind CSS", "HTML5", "CSS3", "Three.js"],
     backend: ["ASP.NET Core", ".NET 8", "Node.js", "Express.js", "Socket.IO", "REST APIs"],
     databases: ["MongoDB", "SQL Server", "PostgreSQL", "Redis", "Entity Framework Core"],
-    devopsAndTools: ["Git", "AWS", "Inngest", "Cloudinary", "Postman", "Sandpack"],
+    devopsAndTools: ["Git", "VS Code", "Visual Studio", "Claude Code", "Antigravity", "Postman", "Inngest", "Cloudinary", "Sandpack"],
   },
 
   projects: PROJECTS.map((p) => ({

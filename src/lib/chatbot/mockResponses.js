@@ -63,7 +63,7 @@ He recently completed a **Software Development Internship at Prix Corporation** 
 • **Frontend**: React.js, Next.js, Tailwind CSS, HTML5, CSS3, Three.js
 • **Backend**: ASP.NET Core, .NET 8, Node.js, Express.js, Socket.IO, REST APIs
 • **Databases**: MongoDB, SQL Server, PostgreSQL, Redis, Entity Framework Core
-• **Tools & DevOps**: Git, AWS, Cloudinary, Inngest, Postman`,
+• **Tools & DevOps**: Git, VS Code, Visual Studio, Claude Code, Antigravity, Cloudinary, Inngest, Postman`,
 
   projects: `Here are some of Vaibhav's featured projects:
 
