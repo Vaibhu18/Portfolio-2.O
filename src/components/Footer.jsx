@@ -31,7 +31,7 @@ const Footer = () => {
 
   return (
     <footer className="relative border-t border-border bg-surface">
-      <div className="container-page flex flex-col gap-12 py-14 md:py-16">
+      <div className="container-page flex flex-col gap-6 pt-12 pb-6 md:gap-8 md:pt-14 md:pb-8">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div className="flex flex-col gap-4">
             <Link href="/" className="group w-fit" aria-label={`${SITE.name} — home`}>
@@ -85,7 +85,7 @@ const Footer = () => {
         {/* Big Dotted VCODE Matrix Banner */}
         <VCodeDotMatrix />
 
-        <div className="flex flex-col-reverse gap-4 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col-reverse gap-4 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</p>
           <div className="flex items-center gap-4">
             {time && (

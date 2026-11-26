@@ -90,7 +90,7 @@ export default function Navbar() {
           open
             ? "border-b border-border bg-background"
             : scrolled
-              ? "border-b border-border bg-background/80 backdrop-blur-xl backdrop-saturate-150"
+              ? "border-b border-border bg-background/85 backdrop-blur-md"
               : "border-b border-transparent"
         }`}
       >

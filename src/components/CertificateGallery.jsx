@@ -22,7 +22,7 @@ const TYPE_BADGES = {
 function TypeBadge({ type }) {
   const { icon: Icon, label } = TYPE_BADGES[type] ?? TYPE_BADGES.Course;
   return (
-    <span className="inline-flex items-center gap-1 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-medium text-white backdrop-blur-md">
+    <span className="inline-flex items-center gap-1 rounded-full bg-black/75 px-2.5 py-1 text-[11px] font-medium text-white">
       <Icon size={11} /> {label}
     </span>
   );
